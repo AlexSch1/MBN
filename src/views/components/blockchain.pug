@@ -1,0 +1,35 @@
+.blockchain
+    .blockchain__inner.containner-pad
+        .blockchain__content
+            
+            .blockchain__items
+                .blockchain__people
+                    img(src="/static/img/girl2.svg", alt="").blockchain__girl
+                    img(src="/static/img/men2.svg", alt="").blockchain__men
+                form(action="").blockchain__form
+                    .blockchain__item.blockchain-item
+                        p.blockchain-item__text
+                            | Parameters of the deal are stored in 
+                            br
+                            b Ethereum blockchain 
+                        img(src="/static/img/decoreBorderLeftBig.svg", alt="").blockchain-item__decore
+                        .blockchain-item__fields
+                            input(type="text" placeholder="Target Profit").blockchain-item__input
+                            input(type="text" placeholder="Max Loss").blockchain-item__input
+                            input(type="text" placeholder="Duration").blockchain-item__input
+                    .blockchain__item.blockchain-item                  
+                        p.blockchain-item__text
+                            | Trader's commission is stored in
+                            br
+                            b Ethereum blockchain 
+                        img(src="/static/img/decoreBorderLeftSmall.svg", alt="").blockchain-item__decore
+                        button(type="submit").blockchain-item__btn
+                            b Trader’s 
+                            | Commission
+
+                img(src="/static/img/arrowBottom.svg", alt="").blockchain__arrow
+                .blockchain__contract-token
+                    img(src="/static/img/docs.svg", alt="").blockchain__docs
+                    p.blockchain__text-big
+                        b Ethereum 
+                        | Blockchain

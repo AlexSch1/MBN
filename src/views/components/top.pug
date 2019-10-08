@@ -1,0 +1,38 @@
+.top-wrapper
+  //- img(src="static/img/bgHead.svg", alt="").top-wrapper__decore
+  .top
+    .top__inner.containner-pad
+      h1.top__title.title!=app.top.title
+        span.top__sub-title!=app.top.subTitle
+      p.top__description.text!=app.top.description
+    .top__subtract.subtract
+      .subtract__inner.containner-pad
+        .subtract__items
+          .subtract__item.rect
+            p.rect__title!=app.top.rect_1.title
+            p.rect__description!=app.top.rect_1.description
+          .subtract__item.rect
+            p.rect__title 2500
+            p.rect__description successful contracts  
+          .subtract__item.rect
+            p.rect__title.rect__title-small Risk Management
+            p.rect__description Unique smart-contracts technology
+          .subtract__item.rect
+            p.rect__title.rect__title-small 100% Transparency
+            p.rect__description no fake trader’s history
+          .subtract__item.rect
+            p.rect__title.rect__title-small Safety of Assets
+            p.rect__description traders doesn’t have direct access to the assets
+          .subtract__item.rect
+            p.rect__title.rect__title-small Anonymity
+            p.rect__description MBN does not collect private data
+        .top__pic
+          img(src="/static/img/headPic.png", alt="").top__img
+    .top__bottom
+      a.top__btn(href="") 
+        span.border
+        | Let’s start
+        
+      .top__scroll-btn
+        span.top__scroll-btn-text Or Just Scroll Down
+        a.scroll-btn(href="javascript:void(0)"): img.scroll-btn__icon(src="/static/img/scrollArr.svg" alt="")

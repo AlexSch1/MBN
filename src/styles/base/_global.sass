@@ -1,0 +1,489 @@
+*
+  box-sizing: border-box
+
+html
+  font-size: 10px
+  height: 100%
+
+  &[lang='ru']
+    font-size: 9.5px
+
+    body
+      font-family: 'EtelkaPro', sans-serif
+
+  @media(max-width: 1279px)
+    font-size: 8px
+
+.containner-pad
+    padding-left: px-to-rem(30px)
+    padding-right: px-to-rem(30px)
+    @media(max-width: 767px)
+      padding-left: px-to-rem(15px)
+      padding-right: px-to-rem(15px)
+
+body
+  -moz-osx-font-smoothing: grayscale // sass-lint:disable-line no-vendor-prefixes
+  -webkit-font-smoothing: antialiased // sass-lint:disable-line no-vendor-prefixes
+  color: $light
+  font-family: $default-font-family
+  font-size: $default-font-size
+  font-weight: $default-font-weight
+  line-height: $default-line-height
+  min-height: 100%
+
+.btn-base-shadow
+    box-shadow: 0px 12px 20px -11px #3ac997
+.btn-bl-shadow
+    box-shadow: 0px 12px 20px -11px #3c7eff
+.shadow-item
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25)
+
+.no-overflow
+  overflow: hidden
+
+[hidden]
+  display: none
+
+img
+  height: auto
+  max-width: 100%
+
+b
+  font-weight: bold
+
+.nobr
+  white-space: nowrap
+
+.js-inlined-svg,
+[src$='svg']
+  display: block
+
+.title
+  font-size: px-to-rem(36px)
+  font-weight: bold
+  @media(max-width: 767px)
+    font-size: px-to-rem(24px)
+
+.title-lg,
+.title,
+.text
+  margin: 0
+
+.title-lg
+  font-size: px-to-rem(60px)
+  font-weight: 400
+  letter-spacing: px-to-rem(4px)
+  @media(max-width: 767px)
+    font-size: 32px
+
+
+.icon-link
+  align-items: center
+  color: #c7cbfd
+  display: inline-flex
+  text-decoration: none
+
+  &:hover
+    .icon-link__icon
+      filter: drop-shadow(0 0 4px rgba(#f06d09, .6))
+
+  &__icon
+    margin-right: px-to-rem(28px)
+    transition: .3s ease
+    width: px-to-rem(30px)
+
+  &__text
+    font-size: px-to-rem(17px)
+
+
+.icon-item
+  align-items: flex-start
+  display: inline-flex
+  text-decoration: none
+
+  &:hover
+    .icon-item__icon
+      filter: drop-shadow(0 0 4px rgba(#f06d09, .6))
+
+  &__icon
+    margin-right: px-to-rem(28px)
+    transform: translateZ(0)
+    transition: .3s ease
+    width: px-to-rem(30px)
+
+  &__text
+    font-size: px-to-rem(20px)
+    padding-top: px-to-rem(4px)
+
+  &__smaller-text
+    color: #8f8f8f
+    display: block
+    font-size: px-to-rem(16px)
+
+
+.gradient-btn
+  background-image: linear-gradient(78deg, $greenish-cyan, $sky-blue)
+  border-radius: 4px
+  box-shadow: 0 0 px-to-rem(40px) rgba($greenish-cyan, .4) // sass-lint:disable-line no-color-literals
+  color: $dark
+  display: inline-block
+  vertical-align: top
+  font-weight: 500
+  min-width: 160px
+  padding: px-to-rem(9.5px) px-to-rem(15.5px)
+  text-align: center
+  transition: .25s ease
+
+
+.border-btn
+  border: 1px solid
+  border-radius: px-to-rem(22.5px)
+  box-shadow: 0 0 0 0
+  color: $greenish-teal
+  display: inline-block
+  font-size: px-to-rem(18px)
+  letter-spacing: px-to-rem(1.5px)
+  padding: px-to-rem(12px) px-to-rem(54px)
+  position: relative
+  text-align: center
+  text-decoration: none
+  text-transform: uppercase
+  transition: .25s ease
+
+  &:hover
+    box-shadow: 0 0 px-to-rem(30px) 0
+
+  &.active
+    pointer-events: none
+
+  &.active,
+  &:active
+    box-shadow: 0 0 px-to-rem(30px) 0
+    color: $bluey-grey
+
+
+.beta-btn
+  align-items: center
+  display: flex
+  flex-direction: column
+  text-decoration: none
+
+  &__icon
+    filter: drop-shadow(0 0 0 transparent) // sass-lint:disable-line no-color-literals
+    height: px-to-rem(118.5px)
+    transition: .5s ease
+    width: px-to-rem(118.5px)
+
+  &__text
+    background-image: linear-gradient(90deg, #4ee9d6, #56c4eb)
+    color: $greenish-cyan
+    font-size: px-to-rem(23px)
+    font-weight: 500
+    margin-top: px-to-rem(17px)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+
+  &:hover
+    .beta-btn__icon
+      filter: drop-shadow(0 0 15px rgba(#30e0de, .75)) // sass-lint:disable-line no-color-literals
+
+
+.quick-guide-btn
+  align-items: center
+  display: inline-flex
+  font-weight: 400
+
+  &:hover
+    .quick-guide-btn__icon
+      filter: drop-shadow(0 0 8px #30e0de) // sass-lint:disable-line no-color-literals
+
+  &__icon
+    filter: drop-shadow(0 0 0 transparent) // sass-lint:disable-line no-color-literals
+    height: 17px
+    margin-right: 11px
+    transition: .25s ease
+    width: 17px
+
+  &__text
+    color: $greenish-teal
+    position: relative
+    top: 1px
+
+
+@keyframes scroll-btn-animation
+  0%
+    stroke: $scroll-btn-light
+
+  25%
+    stroke: $scroll-btn-lighter
+
+  50%
+    stroke: $scroll-btn-lightest
+
+  75%
+    stroke: $scroll-btn-light
+
+  100%
+    stroke: $scroll-btn-light
+
+
+.scroll-btn
+  display: block
+
+  &--fixed
+    left: 50%
+    margin-left: px-to-rem(-16px)
+    margin-top: px-to-rem(-80px)
+    opacity: 0
+    position: fixed
+    top: px-to-rem(100px)
+    transform: rotate(180deg)
+    transition: top 1s ease, opacity 1s ease
+    z-index: 8
+    @media(max-width: 767px)
+      margin-top: -6rem
+
+
+    &.visible
+      opacity: 1
+      top: 100%
+      transform: none
+
+    &.disabled
+      opacity: 0
+      visibility: hidden
+
+  path
+    animation: 1s ease-in scroll-btn-animation infinite
+    transition: .33s ease-in
+
+    &:first-child
+      animation-delay: 0
+
+    &:nth-child(2)
+      animation-delay: -.2s
+
+    &:last-child
+      animation-delay: -.4s
+
+
+.socials
+  align-items: center
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+
+  &__link
+    color: $social-icon-color
+    margin: 0 px-to-rem(15px) 0 0
+    transition: .2s ease
+
+
+    &:hover
+      color: $social-icon-color-hover
+
+    &:first-child
+      margin-left: 0
+
+    &:last-child
+      margin-right: 0
+
+    svg
+      transform: scale(.9)
+
+    g,
+    path
+      fill: currentColor
+
+.page-content
+  margin: 0 auto
+  max-width: px-to-rem(1240px)
+  padding: px-to-rem(170px) px-to-rem(30px) 0
+  @media(max-width: 767px)
+    padding-top: px-to-rem(140px)
+
+
+  a:not([class])
+    color: inherit
+    display: inline-block
+    font: inherit
+    max-width: 100%
+    overflow: hidden
+    text-decoration: inherit
+    text-overflow: ellipsis
+    vertical-align: top
+    white-space: nowrap
+
+  &__title,
+  &__subtitle
+    color: $greenish-teal
+    font-weight: normal
+    text-align: center
+    text-transform: uppercase
+
+  &__title
+    font-size: px-to-rem(43px)
+    margin: 0 0 px-to-rem(70px)
+    @media(max-width: 767px)
+      font-size: 24px
+      margin-bottom: px-to-rem(40px)
+
+
+  &__subtitle
+    font-size: px-to-rem(30px)
+    margin: 0 0 px-to-rem(40px)
+    @media(max-width: 767px)
+      font-size: 18px
+
+
+  &__description
+    font-size: px-to-rem(18px)
+    margin-bottom: px-to-rem(40px)
+    text-align: center
+
+
+  &__text
+    font-size: px-to-rem(17px)
+    text-align: center
+
+    a
+      color: $greenish-teal
+      text-decoration: none
+
+
+.sm-form
+  border-bottom: 1px solid rgba(#fff, .05)
+  margin-bottom: 48px
+  padding-bottom: 45px
+  text-align: left
+
+  .message
+    display: flex
+    flex-direction: column
+    margin-bottom: px-to-rem(26px)
+
+    .error
+      color: #db3c3d
+
+    .success
+      color: #4afdcb
+
+  &__body
+    background: rgba(#fff, .01)
+    border-radius: px-to-rem(17px)
+    padding: px-to-rem(26px) px-to-rem(12px)
+
+  &__submit_policy
+    align-items: center
+    display: flex
+    margin-top: px-to-rem(28px)
+
+  &__policy
+    color: #c7cbfd
+    font-size: 13px
+    margin-left: px-to-rem(20px)
+    max-width: 165px
+
+    a
+      color: inherit
+      text-decoration: underline
+      display: table
+
+      &+a
+        margin-top: px-to-rem(7px)
+
+.sm-form-btn
+  align-items: center
+  background: rgba(#1a1b27, .3)
+  border: none
+  border-radius: px-to-rem(17px)
+  color: #c7cbfd
+  cursor: pointer
+  font-size: px-to-rem(17px)
+  display: inline-flex
+  height: px-to-rem(67px)
+  outline: none
+  padding: 0 px-to-rem(28px)
+
+  &:hover
+    .sm-form-btn__icon
+      filter: drop-shadow(0 0 6px rgb(240, 109, 9))
+
+  &__icon
+    height: px-to-rem(14px)
+    margin-right: px-to-rem(14px)
+    transition: .3s ease
+    width: px-to-rem(14px)
+
+.label
+  display: flex
+  flex-direction: column
+  padding: 0 px-to-rem(7px)
+  @media(max-width: 767px)
+    text-align: center
+
+
+  &__title
+    color: #c7cbfd
+    font-size: px-to-rem(17px)
+    margin-bottom: px-to-rem(11px)
+
+  & + .label
+    border-top: 1px solid rgba(#707070, .1)
+    margin-top: px-to-rem(26px)
+    padding-top: px-to-rem(22px)
+
+input[type="button"],
+button
+  cursor: pointer
+  outline: none
+
+.input
+  &_danger
+    border: 1px solid #fd0000d4 !important
+
+footer a
+  color: #8f92b8
+
+.success__icon
+  position: relative
+
+  &::before
+    content: ''
+
+    width: 20px
+    height: 20px
+
+    background: url(/static/img/icons/success.svg) no-repeat center / cover
+
+    position: absolute
+
+    bottom: -4px
+    right: -4px
+
+.error__icon
+  position: relative
+
+  &::before
+    content: ''
+
+    width: 20px
+    height: 20px
+
+    background: url(/static/img/icons/error.svg) no-repeat center / cover
+
+    position: absolute
+
+    bottom: -4px
+    right: -4px
+
+p
+  margin: 0
+
+.blur
+  filter: blur(5px)
+
+.usdt
+  color: #44b6ff
+.btc
+  color: #31b993

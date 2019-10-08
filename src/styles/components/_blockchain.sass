@@ -1,0 +1,115 @@
+.blockchain
+    background-color: #1e2124
+    padding: 70px 0 67px
+
+    &__text
+        font-size: px-to-rem(18px)
+        color: rgba(#ffffff, 0.8)
+        white-space: nowrap
+        &-big
+            font-size: px-to-rem(24px)
+            color: #ffffff
+    &__docs
+        margin-bottom: 15px
+    &__contract-token
+        width: 310px
+        height: 98px
+        margin-left: auto
+        margin-right: -5px
+        display: flex
+        justify-content: flex-start
+        flex-direction: column
+        align-items: center
+        background: url(/static/img/bgtoken.svg) 50% 50% no-repeat / auto
+        @media(max-width: 767px)
+            margin-left: auto
+            margin-right: auto
+            width: auto
+    &__content
+        // display: flex
+        // justify-content: center
+        text-align: right
+        max-width: 658px
+        margin: 0 auto
+    &__people
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        margin-bottom: 20px
+        @media(max-width: 767px)
+            justify-content: center
+    &__girl
+        margin-right: 15px
+    &__arrow
+        margin-left: auto
+        margin-right: 142px
+        margin-top: 22px
+        margin-bottom: 32px
+        @media(max-width: 767px)
+            margin-left: auto
+            margin-right: auto
+    &__form
+        display: flex
+        flex-direction: column
+        // align-items: center
+
+
+.blockchain-item
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    margin-bottom: 13px
+    text-align: center
+    @media(max-width: 767px)
+        display: block
+        width: 100%
+        margin-bottom: 40px
+    &:last-child
+        margin-bottom: 0
+    &__text
+        font-size: px-to-rem(18px)
+        color: rgba(#ffffff, 0.8)
+        white-space: nowrap
+        @media(max-width: 767px)
+            margin-bottom: 20px
+            text-align: center
+    &__fields
+        border-radius: 10px
+        display: flex
+        flex-direction: column
+        background-image: linear-gradient(to right, #f7aa4d, #bf11c8)
+        padding: 6px
+        max-width: 296px 
+        width: 100%
+        @media(max-width: 767px)
+            margin: 0 auto
+    &__btn
+        background-image: linear-gradient(to right, #f7aa4d, #bf11c8)
+        border: none
+        font-size: px-to-rem(18px)
+        color: #ffffff
+        border-radius: 10px
+        max-width: 296px 
+        display: inline-block
+        width: 100%
+        height: 58px
+        cursor: pointer
+        @media(max-width: 767px)
+            margin: 0 auto
+    &__input
+        border: none
+        background-color: #fff
+        margin-bottom: 4px
+        padding: 10px 0 14px 16px
+        background-color: rgba(0, 0, 0, 0.11)
+        border-radius: 10px
+        &::placeholder
+            font-size: px-to-rem(18px)
+            color: #ffffff
+        &:last-child
+            margin-bottom: 0
+    &__decore
+        margin-right: 19px
+        margin-left: 26px
+        @media(max-width: 767px)
+            display: none

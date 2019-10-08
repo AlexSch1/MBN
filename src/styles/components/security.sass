@@ -1,0 +1,203 @@
+.security-top
+    color: #000000
+    padding-bottom: 122px
+    padding-top: 161px
+    @media(max-width: 1023px)
+        padding-top: 100px
+    @media(max-width: 767px)
+        padding-bottom: 50px
+    &__title
+        padding-bottom: 94px
+        text-align: center
+        @media(max-width: 1023px)
+            padding-bottom: 0
+        @media(max-width: 767px)
+            margin-bottom: 50px
+    &__title-item
+        padding: 13px 49px 20px 49px
+        width: 241px
+        display: inline-block
+        text-align: center
+        border-radius: 59px
+        margin-top: 19px
+        @media(max-width: 1260px)
+            padding-bottom: 11px
+        @media(max-width: 1023px)
+            padding: 13px 10px
+            width: 141px
+    &__item
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin-bottom: -70px
+        @media(max-width: 1023px)
+            margin-bottom: -48px
+        @media(max-width: 1023px)
+            // width: 100%
+            // max-width: 100px
+            svg
+                width: 100px !important
+        @media(max-width: 767px)
+            margin-bottom: 0
+        &-men
+            @media(max-width: 767px)
+                margin-bottom: 70px
+        &-girl
+            @media(max-width: 767px)
+                margin-top: 60px
+    &__infestor
+        color: #d29a37
+        background-color: #ffecc7
+    &__trader
+        color: #37d2ad
+        background-color: #c7ffee
+    &__top
+        display: flex
+        justify-content: center
+        align-items: center
+        @media(max-width: 1023px)
+            // justify-content: space-between
+        @media(max-width: 767px)
+            flex-direction:  column
+            margin-bottom: 50px
+    &__text
+        font-size: px-to-rem(32px)
+        position: absolute
+        top: -40px
+        left: 50%
+        transform: translateX(-50%)
+        white-space: nowrap
+        b
+            font-weight: bold
+        @media(max-width: 1023px)
+            font-size: px-to-rem(24px)
+        @media(max-width: 1023px)
+            top: -27px
+    &__arr
+        position: relative
+        @media(max-width: 1455px)
+            width: 17%
+            svg
+                width: 100% !important
+        @media(max-width: 1260px)
+            width: 12%
+        @media(max-width: 767px)
+            transform: rotate(90deg)
+            width: 95px
+
+    &__list 
+        list-style: none
+        padding: 0
+        margin: 0
+        padding-top: 12px
+        border: solid 3px #f5f5f5
+        // max-width: 654px
+        // width: 100%
+        display: inline-block
+        transform: translateX(-50%)
+        position: relative
+        left: 50%
+        margin: 0 auto
+        margin-top: 26px
+        padding: 33px 24px 33px 35px
+        @media(max-width: 1023px)
+            max-width: 370px
+            margin-top: 0
+            padding: 25px 20px 25px 20px
+    &__li
+        padding-left: 69px
+        font-size: px-to-rem(18px)
+        color: rgba(#000000, 0.8)
+        margin-bottom: 38px
+        position: relative
+        @media(max-width: 1023px)
+            padding-left: 35px
+        &::before
+            content: ""
+            display: block
+            position: absolute
+            top: 50%
+            left: 0
+            transform: translateY(-50%)
+            width: 45px
+            height: 45px
+            background: url('/static/img/listOkBlue.svg') 50% 50% no-repeat / cover
+            @media(max-width: 1023px)
+                width: 25px
+                height: 25px
+        &:last-child
+            margin-bottom: 0
+
+
+.mbn
+    width: 100%
+    width: 376px
+    height: 236px
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    z-index: 1
+    background: url(/static/img/boxgrad.svg) 50% 50% no-repeat / auto
+    &::before
+        content: ""
+        position: absolute
+        background-color: #fff
+        width: 17px
+        height: 17px
+        left: 50%   
+        bottom: 32px
+        border-radius: 50%
+        transform: translateX(-50%)
+        @media(max-width: 1023px)
+            bottom: 65px
+            width: 10px
+            height: 10px
+        @media(max-width: 767px)
+            display: none
+    &::after
+        content: ""
+        position: absolute
+        bottom: -27px
+        left: 50%
+        height: 58px
+        width: 2px
+        transform: translateX(-50%)
+        background-color: rgb(229, 121, 116)
+        @media(max-width: 1023px)
+            bottom: -1px
+            height: 65px
+        @media(max-width: 767px)
+            display: none
+    @media(max-width: 1439px)
+        background-size: 100%
+    @media(max-width: 1023px)
+        width: 230px
+    @media(max-width: 767px)
+        height: 155px
+        margin-top: 40px
+        margin-bottom: 40px
+    &__box
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: -1 
+    
+    &__text
+        color: #ffffff
+        font-size: px-to-rem(24px)
+        @media(max-width: 1023px)
+            font-size: px-to-rem(20px)
+    &__logo 
+        height: 41px !important
+        width: 131px !important
+        margin-bottom: 18px
+        @media(max-width: 1023px)
+            width: 100px !important
+            margin-bottom: 5px
+        path
+            fill: #ffffff
+            

@@ -1,0 +1,23 @@
+// sass-lint:disable-all
+.h-text-gradient
+  color: $greenish-cyan
+  @supports (-webkit-background-clip: text)
+    background-image: linear-gradient(85deg, $greenish-cyan, $sky-blue)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+// sass-lint:enable-all
+
+.h-text-lighter
+  color: $lighter
+
+.h-text-light
+  color: $light
+
+.h-uppercase
+  text-transform: uppercase
+
+.h-text-inherit
+  color: inherit
+  font: inherit
+  letter-spacing: inherit
+

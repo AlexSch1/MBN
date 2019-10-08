@@ -1,0 +1,102 @@
+.cof-top
+    background: url('/static/img/cofBg.svg') 50% 50% no-repeat / auto
+    background-position: 0 0
+    color: #000000
+    text-align: center
+    position: relative
+    @media(max-width: 767px)
+        padding-bottom: 50px
+    &__big-text
+        font-weight: normal
+        padding-top: 161px
+        padding-bottom: 87px
+        @media(max-width: 767px)
+            padding-top: 100px
+            padding-bottom: 50px
+    &__title
+        font-size: px-to-rem(48px)
+        font-weight: normal
+        margin: 0
+        margin-bottom: 48px
+        @media(max-width: 767px)
+            font-size: px-to-rem(34px)
+            br
+                display: none
+    &__sub-title
+        max-width: 35%
+        margin: 0 auto
+        font-size: px-to-rem(24px)
+        color: rgba(#424242, 0.8)
+        font-weight: normal
+        margin-bottom: 60px
+        @media(max-width: 767px)
+            max-width: 100% 
+    &__btn
+        width: 219px
+        height: 60px
+        margin: 0 auto
+
+        box-sizing: border-box
+        position: relative
+        display: -webkit-flex
+        display: -moz-flex
+        display: -ms-flex
+        display: -o-flex
+        display: flex
+
+        justify-content: center
+        align-items: center
+
+        border-radius: 50px
+
+        background-color: #3ac997
+        box-shadow: 0px 12px 20px -11px #3ac997
+
+        font-size: px-to-rem(18px)
+        color: #fff
+        line-height: 50px
+        text-decoration: none
+        font-weight: bold
+        text-transform: uppercase
+        &-wr
+            margin-bottom: 69px
+    &__text
+        font-weight: normal
+        margin-bottom: 36px
+        @media(max-width: 767px)
+            margin-bottom: 25px
+    
+    &__decore
+        width: auto
+        position: absolute
+        @media(max-width: 1023px)
+            display: none
+        &-men
+            left: 17.5%
+            bottom: 15%
+        &-girl
+            right: 9.8%
+            top: 24%
+            @media(max-width: 1460px)
+                right: 5.8%
+                top: 38%
+    &__list
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        margin-left: auto
+        max-width: 37%
+        margin: 0 auto
+        margin-right: 14%
+        margin-bottom: 84px
+        @media(max-width: 1023px)
+            max-width: 48%
+        @media(max-width: 767px)
+            max-width: 90%
+            margin: 0 auto
+    &__history
+        color: rgba(#000000, 0.8)
+        text-align: left
+        margin-left: 0
+        max-width: 687px
+// @media(max-width: 1439px) @media(max-width: 1023px) @media(max-width: 767px)

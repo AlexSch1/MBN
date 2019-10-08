@@ -1,0 +1,76 @@
+.investors
+    width: 100%
+    text-align: center
+    padding-top: 70px
+    padding-bottom: 100px
+    background-color: #f5f9fa
+    @media(max-width: 1023px)
+        padding-bottom: 70px
+    @media(max-width: 767px)
+        padding-top: 50px
+        padding-bottom: 50px
+    
+    &__title
+        margin: 0
+        margin-bottom: 75px
+        color: #000000
+        @media(max-width: 767px)
+            margin-bottom: 25px
+    &__inner
+        display: flex
+        justify-content: center
+        align-items: center
+        @media(max-width: 767px)
+            flex-wrap: wrap
+    &__item
+        padding-left: 56px
+        font-size: px-to-rem(18px)
+        color: #101012
+        font-family: Lato
+        position: relative
+        margin-right: 43px
+        @media(max-width: 767px)
+            width: 100%
+            margin-bottom: 20px
+            margin-right: 0
+        b   
+            color: #101012
+            font-weight: #101012
+            font-weight: 900
+            
+        &:last-child
+            margin-right: 0
+        &::before
+            content: ""
+            display: block
+            position: absolute
+            top: 50%
+            left: 0
+            transform: translateY(-50%)
+            width: 45px
+            height: 45px
+            background: url('/static/img/listOk.svg') 50% 50% no-repeat
+            background-size: cover
+            @media(max-width: 1023px)
+                width: 25px
+                height: 25px
+        @media(max-width: 1023px)
+            text-align: left
+            padding-left: 35px
+            margin-right: 10px
+
+
+
+.calculate
+    background-color: #101012
+    padding: 100px 0
+    color: #ffffff
+    text-align: center
+    @media(max-width: 767px)
+        padding: 70px 12px
+    &__title
+        margin: 0
+        margin-bottom: 20px
+    &__description
+        font-size: px-to-rem(18px)
+        opacity: 0.8

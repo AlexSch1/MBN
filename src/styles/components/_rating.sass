@@ -1,0 +1,187 @@
+.rating
+    background-color: #1e2124
+    color: #ffffff
+    padding-top: 16px
+    padding-bottom: 89px
+    text-align: center
+    &__sub
+        font-size: px-to-rem(12px)
+        opacity: 0.5
+        margin-bottom: 53px
+    &__title
+        margin-bottom: 13px
+    &__sub-title
+        opacity: 0.8
+        font-size: px-to-rem(18px)
+        margin-bottom: 42px
+    &__table
+        margin: 0 auto
+        max-width: 1589px
+        width: 100%
+        background: #2c2f33
+        margin-bottom: 32px
+        border-radius: 10px
+    &__btn
+        font-size: px-to-rem(14px)
+        width: 117px
+        height: 41px
+        color: #ffffff
+        text-decoration: none
+        border: solid 2px #56c69f
+        display: inline-block
+        border-radius: 28px
+        line-height: 40px
+        cursor: pointer
+        &_show
+            display: none
+
+.table-rating
+    padding: 40px 15px 19px
+    display: block
+    @media(max-width: 620px)
+        padding-left: 5px
+        padding-right: 5px
+    &__grid
+        @media(max-width: 400px)
+            overflow-x: scroll
+    &__wrap
+        min-width: 350px
+    &__th
+        text-align: left
+        color: #5a5e66
+        font-size: 13px
+        padding-bottom: 22px
+        @media(max-width: 767px)
+            font-size: 10px
+        &:nth-child(1)
+            flex: 100 0 auto
+            width: 100px
+        &:nth-child(2)
+            flex: 200 0 auto
+            width: 200px
+        &:nth-child(3)
+            flex: 200 0 auto
+            width: 200px
+        &:nth-child(4)
+            flex: 180 0 auto
+            width: 180px
+        &:nth-child(5)
+            flex: 100 0 auto
+            width: 100px
+        &:nth-child(6)
+            flex: 50 0 auto
+            width: 50px
+        &:nth-child(7)
+            flex: 110 0 auto
+            width: 110px
+        &:nth-child(8)
+            flex: 90 0 auto
+            width: 90px
+    &__pic,
+    &__name,
+    &__avg
+        display: flex
+        justify-content: flex-start
+        align-items: center
+    &__balance-stat
+        display: flex
+        align-items: flex-start
+        justify-content: center
+        flex-direction: column
+    &__hide
+        @media(max-width: 1280px)
+            display: none
+        &-mobile
+            @media(max-width: 767px)
+                display: none !important
+            &-two
+                @media(max-width: 620px)
+                    display: none !important
+    &__name
+        padding-left: 15px
+        @media(max-width: 767px)
+            padding-left: 0
+    &__btn
+        border-radius: 2px
+        background-color: #32b994
+        text-transform: uppercase
+        color: #161721
+        font-size: 12px
+        height: 32px
+        border: none
+        width: auto
+        max-width: 300px
+        font-weight: 600
+        cursor: pointer
+        text-decoration: none
+        display: inline-block
+        text-align: center
+        line-height: 32px
+        padding: 0 6px
+        @media(max-width: 767px)
+            font-size: 10px
+        &-invest
+            display: flex
+            justify-content: center
+            align-items: center
+    &__head
+        display: flex
+        width: 100%
+    &__td
+        text-align: left
+        font-size: 13px
+        height: 90px
+        text-align: left
+        @media(max-width: 767px)
+            font-size: 10px
+            
+        &:nth-child(1)
+            flex: 100 0 auto
+            width: 100px
+        &:nth-child(2)
+            flex: 200 0 auto
+            width: 200px
+        &:nth-child(3)
+            flex: 200 0 auto
+            width: 200px
+        &:nth-child(4)
+            flex: 180 0 auto
+            width: 180px
+        &:nth-child(5)
+            flex: 100 0 auto
+            width: 100px
+            display: flex
+            flex-direction: column
+            justify-content: center
+        &:nth-child(6)
+            flex: 50 0 auto
+            width: 50px
+        &:nth-child(7)
+            flex: 110 0 auto
+            width: 110px
+            @media(max-width: 760px)
+                flex: 90 0 auto
+                width: 90px
+        &:nth-child(8)
+            flex: 90 0 auto
+            width: 90px
+    &__row
+        width: 100%
+        display: flex
+        cursor: pointer
+        transition: background .3s ease
+        &:hover
+            background: #555a61 !important
+            @media(max-width: 767px)
+                background-color: inherit !important
+        &:nth-child(odd)
+            background-color: #222528
+            &:hover
+                @media(max-width: 767px)
+                    background-color: #222528 !important
+
+.contract-settings
+    @media(max-width: 760px)
+        display: flex
+        flex-direction: column
+        justify-content: center

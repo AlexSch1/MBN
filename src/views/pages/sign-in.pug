@@ -1,0 +1,65 @@
+extends ../layouts/base
+
+block page_variables
+	- var page_class = 'sign-in-p';
+	- var page_active = '/sign-in/';
+
+block append head
+	block head_variables
+		- var title = app.head.index.title;
+		- var description = app.head.index.description;
+
+block content
+	.dot-pattern-wrapper
+		.sign-in
+			img(src="/static/img/decore-blue.svg", alt="").sign-in__decore.sign-in__decore1
+			img(src="/static/img/decore-blue.svg", alt="").sign-in__decore.sign-in__decore2
+			img(src="/static/img/decore-blue.svg", alt="").sign-in__decore.sign-in__decore3
+			.sign-in__inner.containner-pad
+				.sign-in__info
+					.sign-in__user-stats
+						span.sign-in__user-login @nerfwrld 
+						span  stats: 
+					.sign-in__indicators
+						p.sign-in__text Money in management
+						p.sign-in__total.sign-in__money 0
+						p.sign-in__text Profit per current contract
+						p.sign-in__total.sign-in__profit 0
+					p.sign-in__notes-sign-in
+						b Fill the form 
+						| and sign your 
+						b first contract
+				.sign-in__form
+					form(action="")
+						h2.sign-in__title.title
+							span Hey,
+							b.sign-in__user-name NERFWRLD
+						.sign-in__field
+							p.sign-in__input-title
+								| Nickname
+								span *
+							input(type="text" placeholder="Name").sign-in__input.input
+						.sign-in__field
+							p.sign-in__input-title
+								|  E-mail
+								span *
+							input(type="email" placeholder="Type your e-mail here...").sign-in__input.input
+						.sign-in__field
+							p.sign-in__input-title
+								| Password
+								span *
+							input(type="password" placeholder="Type your password here...").sign-in__input.input
+						.sign-in__buttons
+							button().sign-in__create.sign-in__btn Create Account
+							p.sign-in__choose
+								| or 
+								b sign in 
+								| with
+							button().sign-in__metamask.sign-in__btn
+								img(src="/static/img/metamask-icon.svg", alt="")
+								span Metamask
+		include ../components/need-help
+
+
+
+	

@@ -1,0 +1,150 @@
+.sign-in
+    color: #000000
+    padding-top: 200px
+    padding-bottom: 100px
+    border-bottom: solid 1px #dbdfdf
+    position: relative
+    overflow: hidden
+    @media(max-width: 1023px)
+        padding-top: 100px
+        padding-bottom: 50px
+    &__decore
+        position: absolute
+        animation: topDecore2 55s linear infinite
+        @media(max-width: 767px)
+            display: none
+    &__decore1
+        height: 518px !important
+        left: -23%
+        top: 30%
+    &__decore2
+        height: 694px !important
+        left: -23%
+        top: 22%
+        opacity: 0.5
+    &__decore3
+        height: 846px !important
+        width: 838px !important
+        left: -26%
+        top: 15%
+        opacity: 0.2
+    &__inner
+        display: flex
+        // justify-content: center
+        align-items: flex-start
+        margin-left: 26%
+        @media(max-width: 1870px)
+            margin-left: auto
+            justify-content: center
+        @media(max-width: 1023px)
+            flex-direction: column
+            align-items: center
+    &__info
+        margin-right: 30px
+        position: relative
+        @media(max-width: 1023px)
+            margin-right: 0
+            margin-bottom: 40px
+        &::after
+            content: ""
+            display: block
+            width: 187px
+            height: 112px
+            margin-left: auto
+            background: url(/static/img/arrow-sign.svg) 50% 50% no-repeat / auto
+            @media(max-width: 1023px)
+                display: none
+    &__user
+        &-stats
+            font-size: px-to-rem(32px)
+            color: rgba(#000000, 0.8)
+            margin-bottom: 26px
+        &-login
+            color: rgba(#3ac997, 0.8)
+            font-weight: bold
+    &__indicators
+        border-top: solid 1px #dbdfdf
+        border-bottom: solid 1px #dbdfdf
+        padding: 29px 102px 15px 30px
+        margin-bottom: 26px
+    &__text
+        font-weight: bold
+        font-size: px-to-rem(22px)
+        margin-bottom: 10px
+    &__total
+        font-size: px-to-rem(64px)
+        font-weight: bold
+        margin-bottom: 13px
+        &:last-child
+            margin-bottom: 0
+    &__notes-sign-in
+        font-size: px-to-rem(18px)
+        color: rgba(#000000, 0.8)
+    &__title
+        margin-bottom: 63px
+        @media(max-width: 767px)
+            margin-bottom: 30px
+    &__form
+        border: solid 1px #dbdfdf
+        border-radius: 10px
+        padding: 60px 53px 58px
+        @media(max-width: 767px)
+            width: 100%
+            padding-right: 30px
+            padding-left: 30px
+    &__field
+        margin-bottom: 38px
+        width: 510px
+        @media(max-width: 767px)
+            width: 100%
+            margin-bottom: 15px
+    &__input
+        background-color: #fff
+        width: 100%
+        border: solid 1px #bbc6c9
+        border-radius: 5px
+        font-size: px-to-rem(16px)
+        color: #1e2124
+        padding: 16px 0 18px 22px
+        &_danger
+            border-color: red
+        &-title
+            font-size: px-to-rem(18px)
+            color: rgba(#000000, 0.7)
+            font-weight: bold
+            margin-bottom: 10px
+            span
+                color: rgba(#ff3333, 0.7)
+    &__btn
+        width: 100%
+        font-size: px-to-rem(18px)
+        font-weight: bold
+        border: none
+        color: #ffffff
+        padding-top: 19px
+        padding-bottom: 20px
+        text-align: center
+        border-radius: 50px
+    &__create
+        background-color: #3c7eff
+        box-shadow: 0px 12px 20px -11px #3c7eff
+    &__metamask
+        background-color: #ffb13c
+        color: #533913
+        box-shadow: 0px 12px 20px -11px #ffb13c
+        padding-top: 10px
+        padding-bottom: 10px
+        display: flex
+        justify-content: center
+        align-items: center
+        svg
+            margin-right: 8px
+    &__choose
+        font-size: px-to-rem(18px)
+        font-weight: bold
+        color: rgba(#000000, 0.7)
+        margin-top: 20px
+        margin-bottom: 20px
+        text-align: center
+        
+

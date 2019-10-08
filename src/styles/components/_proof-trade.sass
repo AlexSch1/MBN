@@ -1,0 +1,59 @@
+.proof-trade
+    padding-top: 54px
+    color: #000000
+    border: solid 3px #f5f5f5
+    &__inner
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+    &__title
+        text-align: center
+        margin-bottom: 39px
+    &__descriotion
+        font-size: px-to-rem(21px)
+        max-width: 671px
+        width: 100%
+        margin: 0 auto
+        color: #1e2124
+        margin-bottom: 21px
+    &__text
+        font-size: px-to-rem(18px)
+        color: #fff
+        padding: 14px 42px 16px 69px
+        display: inline-block
+        margin: 0 auto
+        margin-bottom: 50px
+        background-image: linear-gradient(to right, #f7aa4d, #bf11c8)
+        border-radius: 10px
+        text-align: center
+        position: relative
+        @media(max-width: 1023px)
+            padding-right: 22px
+            padding-left: 22px
+    &__pictures
+        position: relative
+        @media(max-width: 1450px)
+            width: 85%
+        @media(max-width: 1023px)
+            width: 100%
+    &__img
+        border-radius: 5px
+        display: block
+        font-size: 0
+        width: 100%
+    &__img-big
+        max-width: 1241px
+        border-bottom-left-radius: 0
+        border-bottom-right-radius: 0
+    &__img-small
+        max-width: 683px
+        position: absolute
+        bottom: -50px
+        right: -110px
+        @media(max-width: 1450px)
+            right: -80px
+        @media(max-width: 1450px)
+            max-width: 480px
+        @media(max-width: 1023px)
+            display: none

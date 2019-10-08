@@ -1,0 +1,130 @@
+.footer
+    background-color: #f5f9fa
+    padding-top: 95px
+    padding-bottom: 133px
+ 
+    // padding-left: 463px
+    // padding-right: 351px
+    @media(max-width: 1023px)
+        padding-top: 50px
+        padding-bottom: 50px
+    &__inner    
+        width: 100%
+        max-width: 1106px
+        margin: 0 auto
+        padding-left: 56px
+        @media(max-width: 1439px)
+            padding-left: 0
+        
+    &__body
+        display: flex
+        justify-content: flex-start
+        @media(max-width: 1439px)
+            justify-content: space-between
+        @media(max-width: 1023px)
+            flex-wrap: wrap
+            justify-content: flex-start 
+    &__info
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        width: 303px
+        margin-right: 45px
+        @media(max-width: 1023px)
+            margin-right: 0
+            width: 50%
+        @media(max-width: 767px)
+            width: 100%
+            padding-top: 20px
+    &__head
+        display: flex
+        justify-content: space-between
+        margin-bottom: 45px
+        @media(max-width: 1023px)
+            justify-content: flex-start 
+    &__other
+        font-size: px-to-rem(18px)
+        color: #494c4f
+        width: 365px
+        margin-right: 175px
+        @media(max-width: 1439px)
+            margin-right: 105px
+        @media(max-width: 1023px)
+            margin-right: 0
+            width: 50%
+            order: 2
+            margin-top: 20px 
+        @media(max-width: 767px)
+            width: 100%   
+        
+    &__form
+        margin-top: 11px
+        margin-bottom: 57px
+        display: flex
+        align-items: center
+    &__socials
+        @media(max-width: 1023px)
+            flex: 1
+
+    &__input
+        border: none
+        background-color: transparent
+        border-radius: 5px
+        border: solid 1px #bbc6c9
+        padding: 12px 0 13px 16px
+        margin-right: 9px
+        display: block
+        width: 239px
+        &::placeholder
+            font-size: px-to-rem(14px)
+            color: #1e2124
+    &__btn
+        font-size: px-to-rem(14px)
+        font-weight: bold
+        color: #16009e
+        background-color: #16009e
+        border-radius: 28px
+        border: solid 2px #16009e
+        background-color: transparent
+        width: 100%
+        max-width: 117px
+        height: 41px
+        line-height: 38px
+    &__copy
+        color: #494c4f
+        font-size: px-to-rem(18px)
+    &__text
+        color: #8f9092
+        display: inline-block
+        font-size: px-to-rem(14px)
+        margin-bottom: 15px
+        &:last-child
+            margin-bottom: 10px
+        &-underline
+            font-weight: 500
+            border-bottom: 1px solid
+    &__links
+        margin-right: 47px
+        &:last-child
+            margin-right: 0
+        @media(max-width: 1023px)
+            margin-right: 0
+            width: 20%
+            order: -1
+        @media(max-width: 767px)
+            width: 50%
+
+    &__link
+        font-size: px-to-rem(16px)
+        color: rgba(#1e2124, 0.8)
+        margin-bottom: 7px
+        text-decoration: none
+        display: block
+        
+        &_bold
+            font-size: px-to-rem(18px)
+            font-weight: 500
+            margin-bottom: 8px
+            color: #1e2124
+        &_head
+            margin-bottom: 14px

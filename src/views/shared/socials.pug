@@ -1,0 +1,14 @@
+mixin socials(position)
+	.socials
+		each item in app.socials
+			if position === 'top' || position === 'getInTouch'
+				if position === 'top' && item.showInTop
+					a.socials__link(href=item.link target="_blank")
+						img.socials__icon(src=item.icon alt="")
+
+				if position === 'getInTouch' && item.showInGetInTouch
+					a.socials__link(href=item.link target="_blank")
+						img.socials__icon(src=item.icon alt="")
+			else
+				a.socials__link(href=item.link target="_blank")
+					img.socials__icon(src=item.icon alt="")

@@ -1,0 +1,41 @@
+.footer.containner-pad
+    .footer__inner
+        .footer__head
+            img(src="/static/img/logoFooter.svg", alt="").footer__logo
+            .footer__socials
+                include ../shared/socials
+                +socials
+        .footer__body
+            .footer__other
+                p
+                    b Join us 
+                    | to learn more about Membrana
+                form(action="#").footer__form
+                    input(type="email" placeholder="Type your e-mail here...").footer__input.input
+                    input(type="submit", value="Subscribe").footer__btn
+                .footer__copy Membrana LTD © 2018
+            .footer__info
+                p.footer__text
+                    | Willow House, Cricket Square, PO Box 709,
+                    br
+                    | Grand Cayman KY1-1107, Cayman Islands
+
+                a(href="https://www.registry.gov.ky/verify/").footer__text.footer__text-underline Check residence here. 
+
+                p.footer__text 
+                    | Code is: G18241849750.
+                    | Number is: 339391
+                a(href="https://etherscan.io/token/0x4eeea7b48b9c3ac8f70a9c932a8b1e8a5cb624c7").footer__text.footer__text-underline MBN token Smart-Contract address
+            .footer__links
+                a(href="").footer__link.footer__link_bold.footer__link_head Home
+                a(href="").footer__link For Investors
+                a(href="").footer__link For Traders
+                a(href="").footer__link Funds
+                a(href="").footer__link About
+            .footer__links
+                a(href="").footer__link.footer__link_bold Investors
+                a(href="").footer__link.footer__link_bold Traders
+                a(href="").footer__link.footer__link_bold COF
+                a(href="").footer__link.footer__link_bold About
+                a(href="").footer__link.footer__link_bold FAQ
+                a(href="").footer__link.footer__link_bold Contacts

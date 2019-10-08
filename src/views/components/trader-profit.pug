@@ -1,0 +1,66 @@
+.profit
+    form(action="#")
+        .profit__inner.containner-pad
+            .profit__elipse
+            .profit__left
+                .profit__form
+                    .history-container
+                        .history-container__item
+                            p.history-container__title 
+                                | Select a 
+                                b  trader 
+                                | to calculate profit
+                            .history-container__input-wr.input-drop
+                                select#mySelect
+                                    //- option(value="@Johny" name="one") @Johny
+                                    //- option(value="@Boni" name="two") @Boni
+                                    //- option(value="@Eni" name="three") @Eni
+                                    //- option(value="@Gas" name="three") @Gas
+                        .history-container__item
+                            p.history-container__title 
+                                | Set initial investment amount, 
+                                b USDT
+                            .history-container__input-wr.input-dollar
+                                input(type="text" placeholder="1000" value="1000").history-container__input.history-container__usd
+                        .history-container__item
+                            p.history-container__title 
+                                | Set initial 
+                                b investment date
+                            .history-container__input-wr.input-app
+                                input(type="text").datepicker
+            .profit__right
+                .profit__loader
+                    .profit__flex
+                        .profit__rect.income
+                            p.income__sub Income Today:
+                            p.income__total
+                                b.income__usd 0
+                                span USDT 
+                                span.income__procent
+                        .profit__rect.trader-r
+                            .trader-r__row
+                                p.trader-r__naming Trader:&nbsp
+                                p.trader-r__name  
+                            .trader-r__row
+                                p.trader-r__naming Investment Date: &nbsp
+                                p.trader-r__date 
+                                    b.trader-r__full-date  1/1/2019
+                                    span.trader-r__day-ago 
+                        .profit__border
+                            span
+                            span
+                            span
+                            span
+                            span
+                            span
+                            span
+                        button().profit__btn
+                            b Invest 
+                            | and sign contract with 
+                            b.profit__btn-name @Johny 
+                            | now
+
+
+
+
+

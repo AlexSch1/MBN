@@ -1,0 +1,4 @@
+@function px-to-rem($size)
+  @if (unit($size) == 'px')
+    @return $size / 10px + rem
+  @return $size // sass-lint:disable-line indentation

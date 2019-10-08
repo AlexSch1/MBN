@@ -1,0 +1,40 @@
+if !varForLang
+  include ../i18n/en
+
+block page_variables
+
+
+doctype html
+html(lang=app.lang)
+  include ../shared/head
+  block head
+
+  body
+    .app-preloader
+      .app-preloader__circle
+        .app-preloader__circle-inner
+
+    .app(class=page_class)
+      .header-wrapper
+        header.header
+          .logo
+            if page_class === 'index' 
+              a(href=`/`).logo__link: img.logo__image(src="/static/img/logoMBN.svg" alt=app.head.title)
+            else
+              a.logo__link(href=`/`): img.logo__image(src="/static/img/logoMBN.svg" alt=app.head.title)
+          nav.nav
+            ul.nav__list
+              each item in app.nav
+                li.nav__item(class={"active": page_active && item.link && item.link.match(page_active) })
+                  a.nav__link(href=item.link)!=item.title
+          a.hamburger.js-hamburger(href="javascript:void(0)") 
+            span.hamburger__line
+            span.hamburger__line
+            span.hamburger__line
+
+      .main-wrapper
+        main.main 
+          block content
+          include ../components/footer
+
+    

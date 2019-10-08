@@ -1,0 +1,24 @@
+extends ../layouts/base
+
+block page_variables
+	- var page_class = 'index';
+	- var page_active = '';
+
+block append head
+	block head_variables
+		- var title = app.head.index.title;
+		- var description = app.head.index.description;
+
+block content
+	.dot-pattern-wrapper
+		include ../components/top
+		include ../components/investors
+		include ../components/trader-profit
+		include ../components/rating
+		include ../components/opportunities
+		include ../components/platform-funds
+		include ../components/token
+		include ../components/investors-partners
+
+	//- a.scroll-btn.scroll-btn--fixed(href="javascript:void(0)"): img.scroll-btn__icon(src="/static/img/icons/scroll-arrow.svg" alt="")
+	

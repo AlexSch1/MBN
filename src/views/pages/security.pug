@@ -1,0 +1,20 @@
+extends ../layouts/base
+
+block page_variables
+	- var page_class = 'security';
+	- var page_active = '/security/';
+
+block append head
+	block head_variables
+		- var title = app.head.index.title;
+		- var description = app.head.index.description;
+
+block content
+	.dot-pattern-wrapper
+		include ../components/security-c
+		include ../components/blockchain
+		include ../components/proof-trade
+		include ../components/need-help
+
+
+	

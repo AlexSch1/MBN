@@ -1,0 +1,193 @@
+
+.header-wrapper
+  background: transparent
+  left: 0
+  padding: px-to-rem(50px) 0 79px 0
+  position: absolute
+  right: 0
+  top: 0
+  transition: background .25s ease
+  z-index: 10
+
+  //   // new
+  //   padding: 0 0 3rem
+  @media(max-width: 1023px)
+    background: transparent !important
+    padding-bottom: px-to-rem(15px)
+    padding-top: px-to-rem(25px)
+    padding: px-to-rem(25px) px-to-rem(20px) px-to-rem(15px)
+    position: absolute
+
+    .hamburger
+      position: fixed
+      right: px-to-rem(20px)
+      top: px-to-rem(22px)
+
+
+  &.fixed
+    animation: slideDown .6s ease
+    background: $dark
+    padding-bottom: px-to-rem(17px)
+    padding-top: px-to-rem(17px)
+    position: fixed
+    @media(max-width: 1023px)
+      animation: none
+      padding-top: px-to-rem(25px)
+      position: absolute
+
+    .header__anchor
+      display: none
+
+.text-grad
+  color: #ef955d
+
+.header
+  align-items: center
+  display: flex
+  justify-content: space-between
+  margin: 0 auto
+  max-width: 1640px
+  padding-left: px-to-rem(30px)
+  padding-right: px-to-rem(30px)
+  // padding: 0 115px 0 162px
+  box-sizing: initial
+
+
+input
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+
+.nav
+  display: flex
+  font-size: px-to-rem(18px)
+  font-weight: 500
+  letter-spacing: normal
+  margin-left: auto
+  width: auto
+  @media(max-width: 1023px)
+    bottom: 0
+    flex-direction: column
+    font-size: 14px
+    overflow: auto
+    position: fixed
+    right: -320px
+    top: 0
+    transition: .5s ease
+    width: 320px
+    &::before
+      background: rgba($black, .5)
+      bottom: 0
+      content: ''
+      left: 0
+      opacity: 0
+      position: fixed
+      right: 0
+      top: 0
+      transition: inherit
+      visibility: hidden
+
+    &.opened
+      right: 0
+
+      &::before
+        opacity: 1
+        visibility: visible
+
+  &__list
+    align-items: center
+    display: flex
+    list-style: none
+    margin: 0
+    padding: 0
+    width: 100%
+    @media(max-width: 1023px)
+      align-items: flex-start
+      background: #f5f9fa
+      flex-direction: column
+      height: 100%
+      overflow: auto
+      padding: 60px 20px 20px
+      position: relative
+    
+  &__item
+    margin: 0 px-to-rem(40px) 0 0
+    transition: .3s ease
+    color: #1d1b1b
+    &:last-child
+      margin-right: 0
+      @media(max-width: 1023px)
+        margin-right: auto
+    @media(max-width: 1023px)
+      margin: 10px auto
+  &__item.active
+      font-weight: bold
+
+
+  &__link
+    color: #1d1b1b
+    text-decoration: none
+
+
+.hamburger
+  display: none
+  margin-left: auto
+  position: relative
+  width: 30px
+  z-index: 2
+  @media(max-width: 1023px)
+    display: block
+
+
+  &__line
+    background: $light
+    border-radius: 3px
+    display: block
+    height: 3px
+    margin: 6px 0
+    transition: .5s ease
+
+  &.opened
+    .hamburger__line
+      &:first-child
+        transform: rotate(45deg) translate(6px, 6px)
+        transform-origin: center
+
+      &:nth-child(2)
+        opacity: 0
+        transform: translateX(200%)
+
+      &:last-child
+        transform: rotate(-45deg) translate(6px, -6px)
+        transform-origin: center
+
+
+
+.input-drop,
+.input-dollar,
+.input-app
+  &::before
+    content: ""
+    position: absolute
+    top: 18px
+    right: 20px
+    background: url(/static/img/arrDropDown.svg) 50% 50% no-repeat / auto
+
+.input-drop
+  &::before
+    width: 8px
+    height: 7px
+    background: url(/static/img/arrDropDown.svg) 50% 50% no-repeat / auto
+.input-dollar
+  &::before
+    background: url(/static/img/dollar.svg) 50% 50% no-repeat / auto
+    width: 17px
+    height: 15px
+.input-app
+  &::before
+    background: url(/static/img/show-apps-button.svg) 50% 50% no-repeat / auto
+    width: 13px
+    height: 13px
+
+a
+  text-decoration: none

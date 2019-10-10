@@ -31,6 +31,11 @@ window.$ = $
       })
     }
 
+    initCalculate = function () {
+      this.initSelect()
+      this.initDatapicer()
+    }
+
     loaderCpen = () => {
       $('.profit__flex').addClass('blur')
       $('.profit__loader').addClass('profit__loader_active')
@@ -61,21 +66,23 @@ window.$ = $
 
     requestCalculate = (trader, date, investment) => {
       $.get(`https://beta.membrana.io/api/v2/calculator?trader=${trader}&start=${date}&investment=${investment}`, (data) => {
-        console.log(data)
         this.results = data
         let result = data.result
         document.querySelector('.income__usd').innerHTML = (result * $('.history-container__usd').val()).toFixed(1)
+
         if (result >= 1) {
           document.querySelector('.income__procent').innerHTML = `+${((result - 1) * 100).toFixed(1)}%`
         } else {
           document.querySelector('.income__procent').innerHTML = `-${((1 - result) * 100).toFixed(1)}%`
         }
+
         this.loaderClose()
       })
     }
 
     tableRows = (len) => {
       let fragmentTable = document.createDocumentFragment()
+
       for (let i = this.tableView; i < this.ratingTraders.length; i++) {
         if (!this.ratingTraders[i].verified) {
           continue
@@ -220,11 +227,13 @@ window.$ = $
         let trader = e.currentTarget.getAttribute('data-trader')
         let options = $('#mySelect')[0].options
         let selectTrader = 0
+
         for (let i = 0; i < options.length; i++) {
           if (options[i].value === trader) {
             selectTrader = i
           }
         }
+
         $('#mySelect')[0].options[selectTrader].selected = true
         this.cstSel.destroy()
         customSelect(document.getElementById('mySelect'))
@@ -237,11 +246,6 @@ window.$ = $
 
     calculateUsd = (usd = 0) => {
       document.querySelector('.income__usd').innerHTML = (this.results.result * usd).toFixed(1)
-    }
-
-    initCalculate = function () {
-      this.initSelect()
-      this.initDatapicer()
     }
 
     initSelect = function () {
@@ -258,6 +262,7 @@ window.$ = $
       customSelect(document.getElementById('mySelect'))
       this.cstSel = document.querySelector('.customSelect').customSelect
       document.querySelector('.trader-r__name').innerHTML = this.cstSel.value
+
       this.cstSel.select.addEventListener('change', (e) => {
         this.loaderCpen()
 
@@ -301,8 +306,10 @@ window.$ = $
     }
   }
 
-  let myCalculate = new Calculate($('#mySelect'), $('.history-container__usd'), $('.datepicker'))
-
+  let myCalculate = null
+  if ($('.index').length) {
+    myCalculate = new Calculate($('#mySelect'), $('.history-container__usd'), $('.datepicker'))
+  }
   /**
    * profit__btn
    */
@@ -320,6 +327,12 @@ window.$ = $
     $('.cart-token').removeClass('cart-token_active')
     $(e.currentTarget).addClass('cart-token_active')
     $('.token__btn').attr('href', e.currentTarget.href)
+  })
+  /**
+   * scroll-btn
+   */
+  $('.scroll-btn').on('click', function () {
+    $('html, body').animate({ scrollTop: $('.investors').offset().top }, 2000)
   })
   /**
    * forms validade
@@ -424,9 +437,13 @@ window.$ = $
     let nameTrader = sessionStorage.getItem('contact_with')
     if (nameTrader) {
       $.get(`https://beta.membrana.io/api/v2/profile/${nameTrader}`, (data) => {
+        console.log(data)
         $('.sign-in__user-login').html(data.profile.name)
         $('.sign-in__money').html(data.profile.totalInUSDT)
-        $('.sign-in__profit').html(data.profile.currentProfit[0].toFixed(2) + '%')
+
+        if (data.profile.currentProfit[0]) {
+          $('.sign-in__profit').html(data.profile.currentProfit[0].toFixed(2) + '%')
+        }
       })
     }
   }
@@ -558,16 +575,16 @@ app.svgToInline()
 /**
  * Scroll btn form
  */
-;(() => {
-  const $btnForm = $('.scroll-btn-form, .binance__KYC')
-  const $formSection = $('.KYC_wr h2')
+// ;(() => {
+//   const $btnForm = $('.scroll-btn-form, .binance__KYC')
+//   const $formSection = $('.KYC_wr h2')
 
-  if (!$btnForm.length) return false
+//   if (!$btnForm.length) return false
 
-  $btnForm.on('click', () => {
-    $('html, body').animate({ scrollTop: $formSection.offset().top }); return false
-  })
-})()
+//   $btnForm.on('click', () => {
+//     $('html, body').animate({ scrollTop: $formSection.offset().top }); return false
+//   })
+// })()
 
 /**
  * Preloader

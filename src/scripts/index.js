@@ -60,6 +60,7 @@ window.$ = $
 
       $('.trader-r__day-ago').html(`(${totalDays.toFixed(0)} days ago)`)
       $('.trader-r__full-date').html(`${startDay}/${startMonth}/${startYear}`)
+      $('.profit__btn .profit__btn-name').html(`@${traderName} `)
 
       this.requestCalculate(traderName, startDate, investment)
     }

@@ -1,0 +1,157 @@
+.mbn-token
+    &__title
+        color: #000000
+        font-weight: 800
+
+    &__top
+        padding-top: 166px
+        padding-bottom: 122px
+        text-align: center
+        @media(max-width:1023px)
+            padding-top: 100px
+            padding-bottom: 50px
+
+    &__item
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+    &__col
+        width: 100%
+        @media(max-width:767px)
+            margin-bottom: 50px
+            &:last-of-type
+                margin-bottom: 0
+
+    &__left
+        max-width: 654px
+        margin-right: 96px
+        @media(max-width:1279px)
+            margin-right: 50px
+            max-width: 490px
+        @media(max-width:1023px)
+            margin-right: 25px
+        @media(max-width:767px)
+            margin-right: 0
+
+    &__right
+        max-width: 490px
+
+    &__inner
+        display: flex
+        justify-content: center
+        @media(max-width:767px)
+            flex-direction: column
+            align-items: center
+
+    &__content
+        margin-bottom: 120px
+        @media(max-width:767px)
+            margin-bottom: 50px
+
+.token-list
+    &__head
+        width: 100%
+        max-width: 340px
+        padding: 43px 36px
+        margin-bottom: 60px
+        border-radius: 10px
+        background-image: linear-gradient(to right, #f7aa4d, #bf11c8)
+        color: #ffffff
+        text-align: center
+        font-size: px-to-rem(24px)
+        position: relative
+        box-shadow: 0px 12px 20px -11px #bf11c8
+        // box-shadow: #f7aa4d 0px 12px 20px -11px, #bf11c8 0px 12px 20px -11px
+        box-shadow: 0px 0 31px 1px #bf11c88c
+        &::before
+            content: ""
+            position: absolute
+            background-color: #fff
+            width: 17px
+            height: 17px
+            left: 50%
+            bottom: -9px
+            border-radius: 50%
+            transform: translateX(-50%)
+        &::after
+            content: ""
+            position: absolute
+            bottom: -61px
+            left: 50%
+            height: 60px
+            width: 2px
+            transform: translateX(-50%)
+            background-color: #e57974
+            z-index: -1
+
+    &__item
+        width: 100%
+        padding: 25px 35px 25px 38px
+        border-radius: 10px
+        margin-bottom: 58px
+        border: solid 3px #f5f5f5
+        text-align: center
+        position: relative
+        @media(max-width:767px)
+            margin-bottom: 40px
+            padding-left: 10px
+            padding-right: 10px
+        &::after
+            content: ""
+            position: absolute
+            bottom: -61px
+            left: 50%
+            height: 58px
+            width: 2px
+            transform: translateX(-50%)
+            background-color: #e57974
+            @media(max-width:767px)
+                bottom: -43px
+                height: 40px
+        &:last-of-type
+            margin-bottom: 0
+            &::after
+                display: none
+
+    &__title-main
+        font-size: px-to-rem(24px)
+        line-height: normal
+        letter-spacing: normal
+        color: #ffffff
+    &__title
+        margin-bottom: 10px
+        opacity: 0.8
+        font-size: px-to-rem(28px)
+        font-weight: bold
+        line-height: normal
+        letter-spacing: normal
+        color: #000000
+    &__text
+        margin-bottom: 29px
+        opacity: 0.8
+        font-size: px-to-rem(18px)
+        line-height: normal
+        letter-spacing: normal
+        color: #000000
+        &:last-of-type
+            margin-bottom: 0
+
+    &__btn
+        margin-bottom: 35px
+        margin-top: 50px
+        border-radius: 50px
+        background-color: #3c7eff
+        box-shadow: 0px 12px 20px -11px #3c7eff
+        width: 219px
+        height: 61px
+        color: #ffffff
+        text-decoration: none
+        text-transform: uppercase
+        font-weight: bold
+        display: inline-block
+        line-height: 60px
+        cursor: pointer
+        text-align: center
+        transition: all .3s ease

@@ -27,15 +27,17 @@
                     | Number is: 339391
                 a(href="https://etherscan.io/token/0x4eeea7b48b9c3ac8f70a9c932a8b1e8a5cb624c7" target="_blank").footer__text.footer__text-underline MBN token Smart-Contract address
             .footer__links
-                a(href="").footer__link.footer__link_bold.footer__link_head Home
-                a(href="").footer__link For Investors
-                a(href="").footer__link For Traders
-                a(href="").footer__link Funds
-                a(href="").footer__link About
+                a(href="#").footer__link.footer__link_bold.footer__link_head Home
+                a(href="#").footer__link For Investors
+                a(href="#").footer__link For Traders
+                a(href="#").footer__link Funds
+                a(href="#").footer__link About
             .footer__links
-                a(href="").footer__link.footer__link_bold Investors
-                a(href="").footer__link.footer__link_bold Traders
-                a(href="").footer__link.footer__link_bold COF
-                a(href="").footer__link.footer__link_bold About
-                a(href="").footer__link.footer__link_bold FAQ
-                a(href="").footer__link.footer__link_bold Contacts
+                each item in app.nav
+                    a.footer__link.footer__link_bold(href=item.link)!=item.title
+                //- a(href="").footer__link.footer__link_bold Investors
+                //- a(href="").footer__link.footer__link_bold Traders
+                //- a(href="").footer__link.footer__link_bold COF
+                //- a(href="").footer__link.footer__link_bold About
+                //- a(href="").footer__link.footer__link_bold FAQ
+                //- a(href="").footer__link.footer__link_bold Contacts

@@ -57,6 +57,8 @@
     &__left
         padding-right: 77px
         @media(max-width: 1439px)
+            padding-right: 73px
+        @media (max-width: 1279px)
             padding-right: 63px
         @media(max-width: 767px)
             padding: 0
@@ -88,10 +90,24 @@
             top: 54%
             transform: translateY(-50%)
             right: -106px
+            transition: opacity 0.5s ease
+            opacity: 0
             @media(max-width: 1439px)
+                right: -85px
+                right: -102px
+            @media (max-width: 1279px)
                 right: -85px
             @media(max-width: 767px)
                 display: none
+            &_visible
+                opacity: 1
+            &-2
+                top: 41%
+                right: -105px
+                @media(max-width: 1439px)
+                    right: -103px
+                @media (max-width: 1279px)
+                    right: -84px
     &__percent
         position: absolute
         top: 24%
@@ -102,12 +118,13 @@
 
 .level
     color: #ffffff
-    padding: 13px 57px 20px 61px
+    padding: 18px 57px 16px 61px
     display: inline-block
     max-width: 241px
     font-size: px-to-rem(36px)
     background-image: linear-gradient(to right, #f0975c, #d85590)
     border-radius: 10px
     font-weight: bold
+    cursor: pointer
     &_disabled
         opacity: 0.2

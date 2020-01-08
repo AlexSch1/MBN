@@ -23,7 +23,6 @@
       right: px-to-rem(20px)
       top: px-to-rem(22px)
 
-
   &.fixed
     animation: slideDown .6s ease
     background: $dark
@@ -51,7 +50,6 @@
   padding-right: px-to-rem(30px)
   // padding: 0 115px 0 162px
   box-sizing: initial
-
 
 input
   -webkit-appearance: none
@@ -109,7 +107,7 @@ input
       overflow: auto
       padding: 60px 20px 20px
       position: relative
-    
+
   &__item
     margin: 0 px-to-rem(40px) 0 0
     transition: .3s ease
@@ -121,13 +119,14 @@ input
     @media(max-width: 1023px)
       margin: 10px auto
   &__item.active
-      font-weight: bold
-
+    font-weight: bold
 
   &__link
     color: #1d1b1b
     text-decoration: none
-
+    transition: .3s ease
+    &:hover
+      color: #3ac997
 
 .hamburger
   display: none
@@ -137,7 +136,6 @@ input
   z-index: 2
   @media(max-width: 1023px)
     display: block
-
 
   &__line
     background: $light
@@ -161,8 +159,6 @@ input
         transform: rotate(-45deg) translate(6px, -6px)
         transform-origin: center
 
-
-
 .input-drop,
 .input-dollar,
 .input-app
@@ -184,10 +180,87 @@ input
     width: 17px
     height: 15px
 .input-app
-  &::before
-    background: url(/static/img/icons/show-apps-button.svg) 50% 50% no-repeat / auto
+  &__icon
+    position: absolute
+    top: 18px
+    right: 20px
+    display: block
     width: 13px
     height: 13px
+    background: url(/static/img/icons/show-apps-button.svg) 50% 50% no-repeat / auto
+    cursor: pointer
 
 a
   text-decoration: none
+
+.select-language
+  align-content: center
+  bottom: 1px
+  display: flex
+  height: 32px
+  margin-left: px-to-rem(28px)
+  position: relative
+
+  &::after
+    border-color: #616060 transparent transparent
+    border-style: solid
+    border-width: 4px
+    content: ''
+    position: absolute
+    right: -5px
+    top: 45%
+
+  @media (max-width: 1023px)
+    right: 45px
+
+  
+
+  &.active
+    .select-language__list
+      opacity: 1
+      visibility: visible
+
+  &__list
+    margin-top: 20px
+    opacity: 0
+    position: absolute
+    top: 100%
+    transition: .25s ease
+    visibility: hidden
+
+  &__current,
+  &__item
+    align-items: center
+    display: flex
+    height: 32px
+    justify-content: center
+    position: relative
+    transition: .25s ease
+    width: 41px
+    &_disabled
+      cursor: not-allowed
+
+    img
+      width: 20px
+      display: block
+      position: relative
+
+  &__item
+    background: #35384d
+    border-color: transparent transparent #35384d
+
+    &.active
+      background: #3e4056
+      border-color: transparent transparent #3e4056
+      pointer-events: none
+
+    &:first-child
+      &::before
+        border-color: inherit
+        border-style: solid
+        border-width: 12px
+        bottom: 100%
+        content: ""
+        left: 50%
+        margin-left: -12px
+        position: absolute

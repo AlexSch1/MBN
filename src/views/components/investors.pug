@@ -1,20 +1,13 @@
 .investors.containner-pad
-    h3.investors__title.title Investors Advantages
+    h3.investors__title.title!=app.investors.title
     .investors__inner
         .investors__item
-            p.investors__text 
-                b 100% risk management control: 
-                |  set max loss, choose coin 
+            p.investors__text!=app.investors.li_1
         .investors__item
-            p.investors__text
-                b No fake traders history
+            p.investors__text!=app.investors.li_2
         .investors__item
-            p.investors__text
-                b Invest in traders with different trade strategy 
+            p.investors__text!=app.investors.li_3
         
 .calculate
-    h3.calculate__title.title Calculate How Much You Can Earn
-    p.calculate__description 
-        | Make an easy choose from more than 100 traders
-        br
-        | with up to 50% profitability per one contract.
+    h3.calculate__title.title!=app.calculate.title
+    p.calculate__description!=app.calculate.description

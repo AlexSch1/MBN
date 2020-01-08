@@ -6,9 +6,12 @@
         .tokenholders__flex
             .tokenholders__left.tokenholders__col
                 .tokenholders__medal
-                    span.tokenholders__percent.percent 10%
+                    span.tokenholders__percent.percent 
+                        span.percent__value 10
+                        span %
                     img(src="/static/img/icons/medal.svg", alt="").tokenholders__img.tokenholders__medal-img
-                    img(src="/static/img/icons/medalRow.svg", alt="").tokenholders__img.tokenholders__medal-row
+                    img(src="/static/img/icons/medalRow.svg", alt="").tokenholders__img.tokenholders__medal-row.tokenholders__medal-row_visible(data-level="1")
+                    img(src="/static/img/icons/medalRow2.svg", alt="").tokenholders__img.tokenholders__medal-row.tokenholders__medal-row-2(data-level="2")
             .tokenholders__right.tokenholders__col
                 p.tokenholders__text 
                     b.text-grad 10% 
@@ -18,9 +21,9 @@
                     b Level 2 tokenholders*
                     | in proportional with amount of tokens are in staking
                 .tokenholders__items
-                    .tokenholders__item-level.level.level_disabled
+                    .tokenholders__item-level.level.level_disabled(data-level="1" data-value="0")
                         span.level__text Level 1
-                    .tokenholders__item-level.level
+                    .tokenholders__item-level.level(data-level="2" data-value="10")
                         span.level__text Level 2
                 p.tokenholders__note.tokenholders__text-base 
                     | *You must hold at least 

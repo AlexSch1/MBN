@@ -146,6 +146,7 @@
                 display: block
     &__btn
         border: none
+        overflow: hidden
         box-shadow: 0px 12px 20px -11px #329d78
         background-color: #3ac997
         white-space: nowrap
@@ -157,6 +158,10 @@
         padding: 19px 69px 20px
         border-radius: 50px
         cursor: pointer
+        transition: all .3s ease
+        &:hover
+            box-shadow: 0px 12px 11px -11px #3ac997
+            opacity: 0.9
         b
             font-weight: bold
         @media(max-width: 1023px)
@@ -307,14 +312,15 @@
             &::before
                 content: "4"
         &:last-child
-            border: none
             padding-bottom: 0
+        &_border_no
+            border-color: transparent
         &_ok
             padding-bottom: 20px
             &:nth-child(n)
                 &::before
                     content: " "
-                    background: rgb(60, 126, 255)  url(/static/img/icons/listOkBlue.svg) 50% 50% no-repeat/cover
+                    background: rgb(60, 126, 255)  url(/static/img/icons/listOkBlue.svg) 50% 50% no-repeat
     &__title
         margin-bottom: 12px
         b
@@ -330,10 +336,6 @@
         border-radius: 5px
         width: 100%
         border: solid 1px #dddddd
-
-
-
-
 
 
 
@@ -367,3 +369,32 @@
         transform: translate(-50%, -50%) rotate(0deg)
     to
         transform: translate(-50%, -50%) rotate(360deg)
+
+.autocomplete 
+    position: relative
+    width: 100%
+    display: inline-block
+    &-items 
+        box-shadow: 0px 12px 20px -11px #7d7d7d
+        max-height: 160px
+        overflow: hidden
+        overflow-y: auto
+        position: absolute
+        border: 1px solid #d4d4d4
+        border-bottom: none
+        border-top: none
+        z-index: 99
+        top: 100%
+        left: 0
+        right: 0
+        div 
+            padding: 10px
+            cursor: pointer
+            background-color: #fff
+            border-bottom: 1px solid #d4d4d4
+            // font-size: 1rem
+            &:hover 
+                background-color: #e9e9e9
+        &-active 
+            background-color: DodgerBlue !important
+            color: #ffffff

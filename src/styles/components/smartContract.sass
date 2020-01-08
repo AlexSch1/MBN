@@ -1,0 +1,153 @@
+.smartContract
+
+    &__inner
+        // @media(max-width:1439px)
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        align-items: flex-start
+        max-width: 1243px
+        margin: auto
+        @media(max-width:1023px)
+            flex-direction: column
+            align-items: center
+
+.smart-item
+    position: relative
+    text-align: left
+    color: #3c3d46
+    border-radius: 35px
+    border: solid 2px #d2d2d2
+    font-size: 20px
+    font-size: px-to-rem(20px)
+    width: 100%
+
+    &::before
+        content: ''
+        display: block
+        background-repeat: no-repeat
+        background-position: top
+        background-size: 100%
+        position: absolute
+        z-index: 1
+        @media(max-width:1023px)
+            display: none
+
+    &__number
+        transform: translateY(-50%)
+        position: absolute
+        left: -25%
+        top: 50%
+        font-size: 90px
+        font-weight: bold
+        font-weight: 800
+        line-height: normal
+        letter-spacing: normal
+        color: #16009e
+
+    &_1
+        max-width: 492px
+        padding: 20px 9px 25px 37px
+        margin-right: 203px
+        @media(max-width:1439px)
+            max-width: 480px
+            margin-right: 133px
+        @media(max-width:1279px)
+            max-width: 400px
+            margin-right: 132px
+        
+
+        &::before
+            background-image: url(/static/img/decore/elipse3.svg)
+            width: 230px
+            height: 110px
+            top: 40%
+            left: 100%
+            @media(max-width:1439px)
+                width: 153px
+        .smart-item__number
+            left: -25px
+            top: 26px
+            transform: translateY(0)
+            @media(max-width:767px)
+                top: 0
+
+    &_2
+        max-width: 548px
+        padding: 23px 45px 30px 46px
+        margin-top: 12px
+        @media(max-width:1439px)
+            max-width: 480px
+        @media(max-width:1279px)
+            max-width: 430px
+
+        &::before
+            background-image: url(/static/img/decore/elipse2.svg)
+            width: 123px
+            height: 143px
+            top: 100%
+            left: -11%
+            @media(max-width:1279px)
+                width: 113px
+                height: 128px
+                top: 100%
+                left: -9%
+
+        .smart-item__number
+            left: -38px
+            top: 13px
+            transform: translateY(0)
+    &_3
+        max-width: 494px
+        padding: 16px 23px 17px 36px
+        margin-top: 63px
+
+        &::before
+            background-image: url(/static/img/decore/elipse1.svg)
+            width: 354px
+            height: 89px
+            top: 100%
+            left: 43%
+
+        .smart-item__number
+            left: -35px
+
+    &_4
+        max-width: 420px
+        padding: 13px 0px 18px 38px
+        margin-top: 223px
+        @media(max-width:1279px)
+            margin-top: 194px
+
+        &::before
+            background-image: url(/static/img/decore/elipse4.svg)
+            width: 220px
+            height: 65px
+            top: 100%
+            left: -33%
+
+        .smart-item__number
+            left: -34px
+    &_5
+        max-width: 632px
+        padding: 14px 0px 17px 36px
+        margin-top: 55px
+        margin-right: auto
+        margin-left: 129px
+        .smart-item__number
+            left: -37px
+
+    @media(max-width:1023px)
+        margin: 0
+        margin-bottom: 30px
+        width: 50%
+        max-width: 100%
+        padding: 20px 20px 20px 37px
+    @media(max-width:767px)
+        width: 90%
+        margin-bottom: 20px
+        br
+            display: none
+
+        .smart-item__number
+            left: -24px

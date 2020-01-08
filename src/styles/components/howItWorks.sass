@@ -1,0 +1,325 @@
+.howItWorks
+    &__top
+        padding-bottom: 115px
+        text-align: center
+        @media(max-width:1023px)
+            padding-bottom: 50px
+
+    &__section
+        &-coclus
+            padding-top: 150px
+            text-align: center
+            @media(max-width:1023px)
+                padding-top: 50px
+    &__system
+        padding-bottom: 90px
+        @media(max-width:767px)
+            padding-bottom: 50px
+    &__conclus
+        width: 187px
+        height: 42px
+
+        font-size: px-to-rem(36px)
+        font-weight: bold
+        font-weight: 800
+        line-height: 1
+
+        color: #16009e
+        background-color: #fff
+
+        position: relative
+        bottom: -5px
+
+        border-color: #ffffff
+        border-style: solid
+        border-bottom-right-radius: 31px
+        border-bottom-left-radius: 31px
+        border-right-width: 45px
+        border-left-width: 45px
+        border-bottom-width: 16px
+
+    &__decore-wr
+        background-image: linear-gradient(to right, #ffbb37, #ba28ff 91%, #c00fc3)
+
+    &__title
+        padding-top: 166px
+        padding-bottom: 100px
+        color: black
+
+        @media(max-width: 1023px)
+            padding-top: 100px
+            padding-bottom: 50px
+
+    &__text
+        max-width: 732px
+        padding-top: 50px
+        padding: 40px
+        margin: 0 auto
+        text-align: center
+        font-size: px-to-rem(20px)
+        color: #ffffff
+
+    &__smartContract
+        margin-bottom: 15px
+
+        font-size: px-to-rem(48px)
+        color: #16009e
+
+    &__descriotion
+
+        font-size: px-to-rem(20px)
+        color: black
+
+.example-invest
+    padding-top: 38px
+    padding-bottom: 90px
+    max-width: 798px
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    color: #000000
+
+    &__title
+        font-size: px-to-rem(36px)
+        margin: 0
+        margin-bottom: 34px
+        text-align: center
+
+    &__text
+        max-width: 546px
+        padding: 22px 18px 26px 28px
+        margin-left: auto
+        font-size: px-to-rem(20px)
+        border: solid 2px #d2d2d2
+        border-radius: 35px
+        @media(max-width: 1023px)
+            margin: 0 auto
+
+        &_them
+            &_blue
+                max-width: 750px
+                margin: 0
+                line-height: normal
+                padding: 14px 26px 16px 31px
+                color: #16009e
+
+    &__list
+        padding: 23px 0 78px 0
+        margin: 0
+        align-self: flex-end
+        list-style: none
+        position: relative
+
+        @media(max-width: 1023px)
+            margin: 0 auto
+        @media(max-width: 767px)
+            padding-bottom: 23px
+
+        &::before
+            content: ''
+            display: block
+            background-repeat: no-repeat
+            background-position: top
+            background-size: 100%
+            position: absolute
+            z-index: 1
+            background-image: url(/static/img/decore/exampleIinves1.svg)
+            width: 97px
+            height: 89px
+            top: -28%
+            left: 93.4%
+            @media(max-width: 1023px)
+                left: 127.4%
+            @media(max-width: 767px)
+                display: none
+
+        &::after
+            content: ''
+            display: block
+            background-repeat: no-repeat
+            background-position: top
+            background-size: 100%
+            position: absolute
+            z-index: 1
+            background-image: url(/static/img/decore/exampleIinves2.svg)
+            width: 178px
+            height: 193px
+            top: 20%
+            left: -58%
+            @media(max-width: 767px)
+                display: none
+
+        &-item
+            display: flex
+
+        &-name
+            margin-right: 20px
+            font-size: 24px
+            line-height: normal
+            color: #16009e
+            text-align: right
+            min-width: 200px
+            @media(max-width: 767px)
+                min-width: 160px
+                max-width: 160px
+
+        &-value
+            background-image: linear-gradient(to top, #00efd4, #00a9f7)
+            -webkit-text-fill-color: transparent
+            -webkit-background-clip: text
+            color: #00efd4
+            font-size: 28px
+            font-weight: bold
+            line-height: normal
+
+.system
+    .decore1
+        display: block
+        width: 169px
+        height: 87px
+        background-repeat: no-repeat
+        background-position: top
+        background-size: 100%
+        position: absolute
+        z-index: 1
+        background-image: url(/static/img/decore/systemDecore1.svg)
+        top: 25%
+        left: 94.4%
+        @media(max-width:1279px)
+            width: 100px
+        @media(max-width: 1023px)
+            display: none
+    .decore2
+        display: block
+        width: 171px
+        height: 103px
+        background-repeat: no-repeat
+        background-position: top
+        background-size: 100%
+        position: absolute
+        z-index: 1
+        background-image: url(/static/img/decore/systemDecore3.svg)
+        top: 3%
+        left: -31%
+        @media(max-width:1279px)
+            width: 100px
+        @media(max-width: 1023px)
+            display: none
+    .decore3
+        display: block
+        width: 171px
+        height: 103px
+        background-repeat: no-repeat
+        background-position: top
+        background-size: 100%
+        position: absolute
+        z-index: 1
+        background-image: url(/static/img/decore/systemDecore2.svg)
+        top: 53%
+        left: -31%
+        @media(max-width:1279px)
+            width: 100px
+        @media(max-width: 1023px)
+            display: none
+
+    .decore4
+        display: block
+        width: 1071px
+        height: 1071px
+        background-repeat: no-repeat
+        background-position: top
+        background-size: 100%
+        position: absolute
+        z-index: -1
+        background-image: url(/static/img/decore/elipseMbnBig.svg)
+        top: 48%
+        left: 50%
+        transform: translate(-50%, -50%)
+        animation: mbnRotare 75s linear infinite
+        @media(max-width:1279px)
+            width: 727px
+            height: 727px
+    &__inner
+        display: flex
+        justify-content: center
+        @media(max-width: 1023px)
+            flex-direction: column
+            align-items: center
+    &__col
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        max-width: 480px
+        width: 100%
+        text-align: right
+        @media(max-width: 1023px)
+            text-align: left
+    &__logo
+        @media(max-width:1279px)
+            width: 34.4rem !important
+            height: 46.5rem !important
+    &__center
+        position: relative
+        padding: 42px 0
+        @media(max-width:1279px)
+            padding: 0
+        @media(max-width:1279px)
+            max-width: 272px
+        @media(max-width: 1023px)
+            order: -1
+    &__left
+        margin-right: 176px
+        @media(max-width:1279px)
+            margin-right: 100px
+        @media(max-width: 1023px)
+            margin: 0
+    &__right
+        margin-left: 166px
+        padding-top: 133px
+        justify-content: flex-start
+        text-align: left
+        @media(max-width:1279px)
+            margin-left: 100px
+        @media(max-width:1279px)
+            padding-top: 85px
+        @media(max-width: 1023px)
+            margin: 0
+            padding: 0
+    &__title
+        margin: 0
+        margin-bottom: 90px
+        font-size: px-to-rem(48px)
+        text-align: center
+        font-weight: bold
+        line-height: normal
+        color: #000000
+    &__item
+        @media(max-width: 1023px)
+            margin-bottom: 20px
+        &-title
+            margin-bottom: 14px
+            font-size: px-to-rem(36px)
+            font-weight: bold
+            line-height: normal
+            color: #000000
+        &-text
+            max-width: 340px
+            margin-left: auto
+            opacity: 0.8
+            font-size: px-to-rem(20px)
+            line-height: normal
+            color: #1e2124
+            @media(max-width: 1023px)
+                margin: 0
+
+            &_base
+                &_right
+                    margin: 0
+                    margin-right: auto
+
+@keyframes mbnRotare
+    0%
+        transform: translate(-50%, -50%) rotate(0deg)
+    100%
+        transform: translate(-50%, -50%) rotate(180deg)

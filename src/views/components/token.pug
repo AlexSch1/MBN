@@ -1,5 +1,5 @@
 .token.containner-pad
-    img(src="static/img/icons/logoBg.svg", alt="").token__decore
+    img(src="/static/img/icons/logoBg.svg", alt="").token__decore
     .token__inner
         h3.token__title.title Explore MBN token
         h3.token__description 
@@ -10,14 +10,33 @@
             | With MBN tokens you can recieve staking rewards or join Community Operated Fund (COF) 
             br
             | to take part in investment pools and other ecosystem activities.
-    .token__items
-        a(href="https://abcc.com/en/pro/markets/mbnbtc" target="_blank").token__item.cart-token.cart-token_active.shadow-item
-            span.cart-token__title ABCC
-            span.cart-token__text MBN/USD 1.6084
-        a(href="https://www.probit.com/app/exchange/MBN-BTC" target="_blank").token__item.cart-token.shadow-item
-            span.cart-token__title ProBIT
-            span.cart-token__text MBN/USD 1.6084
-    a(href="https://abcc.com/en/pro/markets/mbnbtc" target="_blank").token__btn.btn-base-shadow BUY MBN
+        include ../components/token-radio
+    //- .token__items
+    //-     span(data-link="https://abcc.com/en/pro/markets/mbnbtc").token__item.cart-token.cart-token_active.shadow-item
+    //-         span.cart-token__title ABCC
+    //-         span.cart-token__text MBN/USD 1.6084
+    //-         .cart-token__links
+    //-             a(href="https://abcc.com/en/pro/markets/mbnusdt" target="_blank").cart-token__link MBN/USDT, 
+    //-             a(href="https://abcc.com/en/pro/markets/mbnbtc" target="_blank").cart-token__link MBN/BTC
+    //-     span(data-link="https://www.probit.com/app/exchange/MBN-BTC").token__item.cart-token.shadow-item
+    //-         span.cart-token__title ProBIT
+    //-         span.cart-token__text MBN/USD 1.6084
+    //-         .cart-token__links
+    //-             a(href="https://www.probit.com/app/exchange/MBN-BTC" target="_blank").cart-token__link MBN/BTC, 
+    //-             a(href="https://www.probit.com/app/exchange/MBN-USDT" target="_blank").cart-token__link MBN/USDT, 
+    //-             a(href="https://www.probit.kr/app/exchange/MBN-KRW" target="_blank").cart-token__link MBN/KRW
+    //-     span(data-link="https://idex.market/eth/idex").token__item.cart-token.shadow-item
+    //-         span.cart-token__title IDEX
+    //-         span.cart-token__text MBN/USD 1.6084
+    //-         .cart-token__links
+    //-             a(href="https://idex.market/eth/mbn" target="_blank").cart-token__link MBN/ETH
+    //-     span(data-link="https://eterbase.exchange/markets").token__item.cart-token.shadow-item
+    //-         span.cart-token__title Eterbase
+    //-         span.cart-token__text MBN/USD 1.6084
+    //-         .cart-token__links
+    //-             a(href="https://eterbase.exchange/markets/MBNETH" target="_blank").cart-token__link MBN/ETH, 
+    //-             a(href="https://eterbase.exchange/account/92d994d3-b056-4ed7-98b6-8151d14f0ba7/markets/MBNUSDT" target="_blank").cart-token__link MBN/USDT
+    //- a(href="https://abcc.com/en/pro/markets/mbnbtc" target="_blank").token__btn.btn-base-shadow BUY MBN
             
 
 

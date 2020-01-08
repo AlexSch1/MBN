@@ -3,6 +3,7 @@
         .profit__inner.containner-pad
             .profit__elipse
             .profit__left
+                
                 .profit__form
                     .history-container
                         .history-container__item
@@ -11,22 +12,21 @@
                                 b  trader 
                                 | to calculate profit
                             .history-container__input-wr.input-drop
-                                select#mySelect
-                                    //- option(value="@Johny" name="one") @Johny
-                                    //- option(value="@Boni" name="two") @Boni
-                                    //- option(value="@Eni" name="three") @Eni
-                                    //- option(value="@Gas" name="three") @Gas
+                                .autocomplete
+                                    input(type="text" placeholder="Search...").autocomplete__input.history-container__input
+                                    .autocomplete-list.autocomplete-items
                         .history-container__item
                             p.history-container__title 
                                 | Set initial investment amount, 
                                 b USDT
                             .history-container__input-wr.input-dollar
                                 input(type="text" placeholder="1000" value="1000").history-container__input.history-container__usd
-                        .history-container__item
+                        .history-container__item.history-container__item_border_no
                             p.history-container__title 
                                 | Set initial 
                                 b investment date
                             .history-container__input-wr.input-app
+                                span.input-app__icon
                                 input(type="text").datepicker
             .profit__right
                 .profit__loader

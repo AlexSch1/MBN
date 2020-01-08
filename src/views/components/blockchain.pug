@@ -5,23 +5,17 @@
             .blockchain__items
                 .blockchain__people
                     img(src="/static/img/icons/girl2.svg", alt="").blockchain__girl
-                    img(src="/static/img/icons/men2.svg", alt="").blockchain__men
+                    img(src="/static/img/icons/men2.png", alt="").blockchain__men
                 form(action="").blockchain__form
                     .blockchain__item.blockchain-item
-                        p.blockchain-item__text
-                            | Parameters of the deal are stored in 
-                            br
-                            b Ethereum blockchain 
+                        p.blockchain-item__text!=app.blockchain.item_text_1
                         img(src="/static/img/icons/decoreBorderLeftBig.svg", alt="").blockchain-item__decore
                         .blockchain-item__fields
-                            input(type="text" placeholder="Target Profit" disabled).blockchain-item__input
-                            input(type="text" placeholder="Max Loss" disabled).blockchain-item__input
-                            input(type="text" placeholder="Duration" disabled).blockchain-item__input
+                            div.blockchain-item__text2 Target Profit
+                            div.blockchain-item__text2 Max Loss
+                            div.blockchain-item__text2 Duration
                     .blockchain__item.blockchain-item                  
-                        p.blockchain-item__text
-                            | Trader's commission is stored in
-                            br
-                            b Ethereum blockchain 
+                        p.blockchain-item__text!=app.blockchain.item_text_2
                         img(src="/static/img/icons/decoreBorderLeftSmall.svg", alt="").blockchain-item__decore
                         button(type="submit" disabled).blockchain-item__btn
                             b Trader’s 

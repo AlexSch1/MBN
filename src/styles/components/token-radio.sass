@@ -1,0 +1,84 @@
+.token-radio
+    &__items
+        display: flex
+        justify-content: center
+        margin-bottom: 79px
+        @media(max-width: 1023px)
+            width: 80%
+            margin: 0 auto
+            margin-bottom: 50px
+            flex-wrap: wrap
+            justify-content: center
+            align-items: center
+        @media(max-width: 767px)
+            flex-direction: column
+            justify-content: center
+            align-items: center
+
+.cart-token
+    width: 100%
+    max-width: 262px
+    padding: 25px 13px 33px 22px
+    background-color: #2c19a7
+    position: relative
+    color: #ffffff
+    border-radius: 20px
+    margin-right: 13px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    text-decoration: none
+    cursor: pointer
+    outline: none
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+    -webkit-tap-highlight-color: transparent
+    &::before
+        content: ""
+        position: absolute
+        top: 13px
+        right: 13px
+        width: 26px
+        height: 26px
+        border: 2px solid #fff
+        background-color: transparent
+        border-radius: 50%
+        @media(max-width: 767px)
+            width: 18px
+            height: 18px
+    @media(max-width: 1023px)
+        padding: 20px 13px 28px 22px
+        margin-bottom: 10px
+    @media(max-width: 767px)
+        margin-right: 0
+
+    &:last-child
+        margin-right: 0
+        @media(max-width: 1023px)
+            margin-right: 13px
+        @media(max-width: 767px)
+            margin-right: 0
+            margin-bottom: 0
+
+    &_active
+        &::before
+            background-color: #fff
+    &__title
+        margin-bottom: 3px
+        padding-bottom: 2px
+        font-size: px-to-rem(32px)
+        font-weight: bold
+        @media(max-width: 767px)
+            font-size: px-to-rem(24px)
+    &__text
+        font-size: px-to-rem(18px)
+        color: rgba(#ffffff, 0.77)
+        padding-bottom: 1px
+    &__links
+        text-align: left
+        display: flex
+        flex-direction: column
+    &__link
+        font-size: px-to-rem(18px)
+        text-decoration: underline
+        color: rgba(#ffffff, 0.77)

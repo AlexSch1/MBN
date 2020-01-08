@@ -27,6 +27,33 @@ html(lang=app.lang)
               each item in app.nav
                 li.nav__item(class={"active": page_active && item.link && item.link.match(page_active) })
                   a.nav__link(href=item.link)!=item.title
+          nav.select-language.js-select-language
+            a.select-language__current(href="javascript:void(0)")
+              if app.lang === 'en'
+                img.js-prevent-inline(src="/static/img/icons/eng.svg" alt="")
+              if app.lang === 'ru'
+                img.js-prevent-inline(src="/static/img/icons/ru.svg" alt="")
+              if app.lang === 'jpn'
+                img.js-prevent-inline(src="/static/img/icons/jpn.svg" alt="")
+              if app.lang === 'chn'
+                img.js-prevent-inline(src="/static/img/icons/chn.svg" alt="")
+              if app.lang === 'kor'
+                img.js-prevent-inline(src="/static/img/icons/kor.svg" alt="")
+              if app.lang === 'de'
+                img.js-prevent-inline(src="/static/img/icons/de.svg" alt="")
+            .select-language__list
+              a.select-language__item(href="/" class={'active': app.lang === 'en'})
+                img.js-prevent-inline(src="/static/img/icons/eng.svg" alt="")
+              a.select-language__item(href="/ru/" class={'active': app.lang === 'ru'}).select-language__item_disabled
+                img.js-prevent-inline(src="/static/img/icons/ru.svg" alt="")
+              a.select-language__item(href="/jpn/" class={'active': app.lang === 'jpn'}).select-language__item_disabled
+                img.js-prevent-inline(src="/static/img/icons/jpn.svg" alt="")
+              a.select-language__item(href="/chn/" class={'active': app.lang === 'chn'}).select-language__item_disabled
+                img.js-prevent-inline(src="/static/img/icons/chn.svg" alt="")
+              a.select-language__item(href="/kor/" class={'active': app.lang === 'kor'}).select-language__item_disabled
+                img.js-prevent-inline(src="/static/img/icons/kor.svg" alt="")
+              a.select-language__item(href="/de/" class={'active': app.lang === 'de'}).select-language__item_disabled
+                img.js-prevent-inline(src="/static/img/icons/de.svg" alt="")
           a.hamburger.js-hamburger(href="javascript:void(0)") 
             span.hamburger__line
             span.hamburger__line

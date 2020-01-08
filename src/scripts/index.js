@@ -1,6 +1,6 @@
 import $ from 'jquery'
 import 'custom-select/src/css/custom-select.css'
-import customSelect from 'custom-select'
+// import customSelect from 'custom-select'
 import 'air-datepicker/dist/css/datepicker.css'
 import 'air-datepicker/dist/js/datepicker'
 
@@ -19,21 +19,99 @@ window.$ = $
       this.results = null
       this.tableView = 0
       this.ratingTraders = null
+      this.selectedTrader = null
 
       $.get('https://beta.membrana.io/api/v2/challenge/result?round=0', (data) => {
         this.traderJson = data.results
-        this.initCalculate()
       })
 
       $.get('https://beta.membrana.io/api/v2/rating', (data) => {
         this.ratingTraders = data.rating
+        this.selectedTrader = data.rating[0]
         this.createTable()
+        this.initSelect()
+        this.helper()
+        this.initCalculate()
       })
     }
 
     initCalculate = function () {
-      this.initSelect()
       this.initDatapicer()
+    }
+
+    helper = () => {
+      let traders = this.ratingTraders
+      let selectTrader = this.selectedTrader
+
+      document.body.addEventListener('click', toggleHelperList)
+
+      function toggleHelperList (e) {
+        if ($(e.target).hasClass('history-container__input') || $(e.target).hasClass('autocomplete__item')) {
+          return
+        }
+        if ($('.autocomplete-list').hasClass('autocomplete-list_visible')) {
+          $('.autocomplete-list').html('')
+          $('.autocomplete-list').removeClass('autocomplete-list_visible')
+        }
+      }
+
+      $('.autocomplete__input').on('input', function () {
+        let inputValue = $(this).val()
+        if (inputValue[0] === '@') {
+          inputValue = inputValue.slice(1, inputValue.length)
+        }
+        $('.autocomplete-list').html('')
+
+        let fragmentHelper = document.createDocumentFragment()
+
+        traders.forEach((v, k) => {
+          if (v.name.substr(0, inputValue.length) === inputValue) {
+            let newDiv = document.createElement('div')
+            newDiv.className = 'autocomplete__item'
+            newDiv.innerHTML = `@${v.name}`
+            newDiv.setAttribute('data-trader', v.name)
+            fragmentHelper.appendChild(newDiv)
+          }
+        })
+
+        document.querySelector('.autocomplete-list').appendChild(fragmentHelper)
+        $('.autocomplete-list').addClass('autocomplete-list_visible')
+      })
+
+      $('.autocomplete__input').on('click', function () {
+        if ($('.autocomplete-list')[0].childElementCount) {
+          return
+        }
+        $('.autocomplete-list').html('')
+        let fragmentHelper = document.createDocumentFragment()
+        traders.forEach((v, k) => {
+          if (v.name === selectTrader.name) {
+            return
+          }
+          let newDiv = document.createElement('div')
+          newDiv.className = 'autocomplete__item'
+          newDiv.innerHTML = `@${v.name}`
+          newDiv.setAttribute('data-trader', v.name)
+          fragmentHelper.appendChild(newDiv)
+        })
+
+        document.querySelector('.autocomplete-list').appendChild(fragmentHelper)
+        $('.autocomplete-list').addClass('autocomplete-list_visible')
+      })
+
+      $('.autocomplete-items').on('click', (e) => {
+        let selectNewTrader = $(e.target).data('trader')
+        $('.autocomplete-list').html('')
+        $('.autocomplete-list').removeClass('autocomplete-list_visible')
+        this.selectedTrader = {
+          name: selectNewTrader
+        }
+        this.loaderCpen()
+
+        document.querySelector('.trader-r__name').innerHTML = selectNewTrader
+        $('.autocomplete .history-container__input').val(`@${selectNewTrader}`)
+        this.calculate()
+      })
     }
 
     loaderCpen = () => {
@@ -48,16 +126,18 @@ window.$ = $
 
     calculate = () => {
       let valueDataInput = $('.datepicker').val()
-      let startDay = valueDataInput.substr(0, 2)
-      let startMonth = valueDataInput.substr(3, 2)
-      let startYear = valueDataInput.substr(6, 4)
-      let startDate = new Date(`${startYear} ${startMonth} ${startDay}`).getTime()
+      let startDay = valueDataInput.substr(0, 2) + ''
+      startDay = (startDay[0] === '0') ? startDay[1] : startDay
+      let startMonth = valueDataInput.substr(3, 2) + ''
+      startMonth = (startMonth[0] === '0') ? startMonth[1] : startMonth
+      let startYear = valueDataInput.substr(6, 4) + ''
+      let strForDate = `${startYear}/${startMonth}/${startDay}`
+      let startDate = new Date(strForDate).getTime()
       let investment = 1
       let dayStart = startDate
       let dayEnd = new Date()
       let totalDays = (dayEnd - dayStart) / (1000 * 60 * 60 * 24)
-      let traderName = this.cstSel.value
-
+      let traderName = this.selectedTrader.name
       $('.trader-r__day-ago').html(`(${totalDays.toFixed(0)} days ago)`)
       $('.trader-r__full-date').html(`${startDay}/${startMonth}/${startYear}`)
       $('.profit__btn .profit__btn-name').html(`@${traderName} `)
@@ -226,20 +306,11 @@ window.$ = $
 
       $(document).on('click', '.table-rating__row', (e) => {
         let trader = e.currentTarget.getAttribute('data-trader')
-        let options = $('#mySelect')[0].options
-        let selectTrader = 0
-
-        for (let i = 0; i < options.length; i++) {
-          if (options[i].value === trader) {
-            selectTrader = i
-          }
+        $('.autocomplete__input').val(`@${trader}`)
+        document.querySelector('.trader-r__name').innerHTML = `@${trader}`
+        this.selectedTrader = {
+          name: trader
         }
-
-        $('#mySelect')[0].options[selectTrader].selected = true
-        this.cstSel.destroy()
-        customSelect(document.getElementById('mySelect'))
-        this.cstSel = document.querySelector('.customSelect').customSelect
-        document.querySelector('.trader-r__name').innerHTML = this.cstSel.value
         this.loaderCpen()
         this.calculate()
       })
@@ -250,28 +321,9 @@ window.$ = $
     }
 
     initSelect = function () {
-      let fragmentSelect = document.createDocumentFragment()
-
-      this.traderJson.forEach((item, index) => {
-        let option = document.createElement('option')
-        option.value = `${item.name}`
-        option.text = `@${item.name}`
-        fragmentSelect.appendChild(option)
-      })
-
-      document.querySelector('#mySelect').appendChild(fragmentSelect)
-      customSelect(document.getElementById('mySelect'))
-      this.cstSel = document.querySelector('.customSelect').customSelect
-      document.querySelector('.trader-r__name').innerHTML = this.cstSel.value
-
-      this.cstSel.select.addEventListener('change', (e) => {
-        this.loaderCpen()
-
-        let traderName = this.cstSel.value
-
-        document.querySelector('.trader-r__name').innerHTML = traderName
-        this.calculate()
-      })
+      let trader = this.selectedTrader
+      $('.autocomplete .history-container__input').val(`@${trader.name}`)
+      document.querySelector('.trader-r__name').innerHTML = `@${trader.name}`
     }
 
     initDatapicer = function () {
@@ -304,6 +356,10 @@ window.$ = $
       if (myDatepicker) {
         myDatepicker.selectDate(new Date(2019, 0, 1))
       }
+
+      $('.input-app__icon').on('click', function () {
+        myDatepicker.show()
+      })
     }
   }
 
@@ -312,27 +368,48 @@ window.$ = $
     myCalculate = new Calculate($('#mySelect'), $('.history-container__usd'), $('.datepicker'))
   }
   /**
-   * profit__btn
+   * lavel
    */
-  $('.profit__btn').on('click', function (e) {
-    e.preventDefault()
-    let selectetItem = $('#mySelect')[0].selectedIndex
-    sessionStorage.setItem('contact_with', $('#mySelect')[0][selectetItem].value)
-    window.location.href = '/sign-in/'
+  $('.level').on('click', function () {
+    if (!$(this).hasClass('level_disabled')) {
+      return
+    }
+    $('.level').addClass('level_disabled')
+    $(this).toggleClass('level_disabled')
+    $('.tokenholders__medal-row').toggleClass('tokenholders__medal-row_visible')
+
+    let procent = $(this).data('value')
+    let procentActive = $('.percent__value').html()
+    let newProcent = +procentActive
+    let duraction = 1
+
+    if (procentActive > procent) {
+      duraction = -duraction
+    } else {
+      duraction = +duraction
+    }
+
+    let timer = setInterval(() => {
+      newProcent += duraction
+      if (newProcent === procent) {
+        clearInterval(timer)
+      }
+      $('.percent__value').html(newProcent)
+    }, 20)
   })
   /**
    * .cart-token radio
    */
   $('.cart-token').on('click', function (e) {
-    e.preventDefault()
     $('.cart-token').removeClass('cart-token_active')
     $(e.currentTarget).addClass('cart-token_active')
-    $('.token__btn').attr('href', e.currentTarget.href)
+    $('.token__btn').attr('href', e.currentTarget.dataset.link)
   })
   /**
    * scroll-btn
    */
-  $('.scroll-btn').on('click', function () {
+  $('.scroll-btn, .top__btn').on('click', function (e) {
+    e.preventDefault()
     $('html, body').animate({ scrollTop: $('.investors').offset().top }, 2000)
   })
   /**
@@ -428,6 +505,42 @@ window.$ = $
   }
 
   /**
+   * profit__btn
+   */
+  $('.profit__btn').on('click', function (e) {
+    e.preventDefault()
+    let selectetItem = $('.autocomplete .history-container__input')[0].value
+    if (selectetItem[0] === '@') {
+      selectetItem = selectetItem.slice(1, selectetItem.length)
+    }
+    sessionStorage.setItem('contact_with', selectetItem)
+    window.location.href = '/sign-in/'
+  })
+  /**
+   * opportunities__btn'
+   */
+  $('.opportunities__btn').on('click', function (e) {
+    e.preventDefault()
+    let valueInput = $('.opportunities__input')[0].value
+    if (valueInput.length === 0) {
+      return
+    }
+    $.get(`https://beta.membrana.io/api/v2/profile/${valueInput}`, (data) => {
+      if (data.error) {
+        $('.opportunities__input-tooltip').addClass('opportunities__input-tooltip_is-active')
+        $('.opportunities__input').addClass('input input_danger')
+        setTimeout(() => {
+          $('.opportunities__input').removeClass('jello-horizontal')
+          $('.opportunities__input-tooltip').removeClass('opportunities__input-tooltip_is-active')
+          $('.opportunities__input').val('')
+        }, 2500)
+        return
+      }
+      sessionStorage.setItem('contact_with', data.profile.name)
+      window.location.href = '/sign-in/'
+    })
+  })
+  /**
    * sign in
    */
   if ($('.sign-in__create').length) {
@@ -448,6 +561,38 @@ window.$ = $
       })
     }
   }
+})()
+
+/**
+ * Select language
+ */
+;(() => {
+  const $select = $('.js-select-language')
+  const $current = $select.find('.select-language__current')
+  const $item = $select.find('.select-language__item')
+
+  $select.on('click', function (e) {
+    $(this).addClass('active')
+    e.stopPropagation()
+  })
+
+  $item.on('click', function (e) {
+    $select.removeClass('active')
+    e.stopPropagation()
+  })
+
+  $(document).on('click', function () {
+    $select.removeClass('active')
+  })
+
+  $item.on('click', function (e) {
+    if ($(this).hasClass('select-language__item_disabled')) {
+      e.preventDefault()
+    } else {
+      $current.html($(this).html())
+      $(this).addClass('active').siblings().removeClass('active')
+    }
+  })
 })()
 
 /**
@@ -591,15 +736,33 @@ app.svgToInline()
  * Preloader
  */
 $(window).on('imagesReady', () => {
-  const topImage = new Image()
-  topImage.src = '/static/img/headPic.png'
+  // const topImage = new Image()
+  // topImage.src = '/static/img/headPic.png'
 
-  const hidePreloader = setTimeout(() => {
+  setTimeout(() => {
     $('.app-preloader, .app-preloader__circle').fadeOut(500, function () {
       $(window).trigger('preloaded')
     })
   }, 500)
 
-  topImage.onload = hidePreloader
-  topImage.onerror = hidePreloader
+  // topImage.onload = hidePreloader
+  // topImage.onerror = hidePreloader
 })
+// mbn token
+function getMbnTokenPprice () {
+  $.ajax({
+    // url: 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest',
+    url: 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit=6&start=1202',
+    data: {
+      'X-CMC_PRO_API_KEY': 'ec94f38e-dfe9-41de-88d1-6d5009ed3d95'
+    },
+    type: 'GET',
+    beforeSend: function (xhr) {
+      xhr.setRequestHeader('X-Test-Header', 'test-value')
+    },
+    success: function () {
+      alert('Success!')
+    }
+  })
+}
+getMbnTokenPprice()

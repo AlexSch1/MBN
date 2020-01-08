@@ -33,6 +33,8 @@
         @media(max-width: 1280px)
             background: #101012 url(/static/img/icons/People2.svg) -10.6% 42px no-repeat
             background-size: auto
+        @media(max-width: 767px)
+            background: #101012
     &__logo
         position: absolute
         right: 0
@@ -40,6 +42,10 @@
         width: auto
         height: 100%
         z-index: -1
+        g
+            transform-origin: 62% 50%
+            animation: topDecore2 55s linear infinite
+
         @media(max-width: 1023px)
             right: -66px
             top: 31%
@@ -47,7 +53,7 @@
         @media(max-width: 767px)
             height: auto
             top: auto
-            bottom: 0
+            bottom: -17px
             width: 378px
     &__inner
         display: flex
@@ -67,6 +73,7 @@
         @media(max-width: 767px)
             padding-bottom: 87px
             padding-right: 0
+            justify-content: flex-start
     &__right
         padding-left: 57px
         @media(max-width: 1023px)
@@ -82,6 +89,7 @@
         margin-bottom: 22px
         margin-top: 0
     &__input
+        outline: none
         border: none
         border-radius: 5px
         background-color: rgba(#323232, 0.4)
@@ -95,6 +103,51 @@
         margin-bottom: 19px
         &::placeholder
             color: rgba(#ffffff, 0.7)
+        &-wr
+            position: relative
+            max-width: 434px
+        &-tooltip
+            color: red
+            width: 110px
+            visibility: hidden
+            background-color: #ffffffe0
+            text-align: center
+            padding: 5px
+            border-radius: 6px
+            position: absolute
+            top: 15px
+            left: 103%
+            z-index: 1
+            display: inline-block
+            white-space: nowrap
+            opacity: 0
+            transition: all .6s ease
+            transform: scale(.9)
+            will-change: opacity
+            @media (max-width: 1279px)
+                width: 80px
+                left: 50%
+                margin-left: -40px
+                top: auto
+                bottom: 114%
+            &::after
+                content: ""
+                position: absolute
+                top: 50%
+                right: 100%
+                margin-top: -5px
+                border-width: 5px
+                border-style: solid
+                border-color: transparent #ffffffe0 transparent transparent
+                @media (max-width: 1279px)
+                    right: 50%
+                    top: 100%
+                    margin-top: 0
+                    border-color:#ffffffe0 transparent transparent transparent
+            &_is-active
+                visibility: visible
+                opacity: 1
+                transform: scale(1)
     &__btn
         border: none
         border-radius: 50px
@@ -105,6 +158,11 @@
         font-size: 18px
         font-weight: bold
         color: #ffffff
+        transition: all .3s ease
+        cursor: pointer
+        &:hover
+            box-shadow: 0px 12px 11px -11px #3ac997
+            opacity: 0.9
     &__list 
         list-style: none
         padding: 0
@@ -134,3 +192,4 @@
                 height: 25px
         &:last-child
             margin-bottom: 0
+

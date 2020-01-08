@@ -1,0 +1,60 @@
+extends ../layouts/base
+
+block page_variables
+	- var page_class = 'howItWorks';
+	- var page_active = '/howItWorks/';
+	- var exampleIinvestList = app.howItWorks.exampleIinvest.list
+
+block append head
+	block head_variables
+		- var title = app.head.howItWorks.title;
+		- var description = app.head.howItWorks.description;
+
+block content
+	.dot-pattern-wrapper
+		.howItWorks
+
+			.howItWorks__top.containner-pad
+				h2.howItWorks__title.title!=app.howItWorks.title
+				p.howItWorks__smartContract!=app.howItWorks.smartContract
+				p.howItWorks__descriotion!=app.howItWorks.descriotion
+
+			include ../components/smartContract
+
+			.howItWorks__section.howItWorks__section-coclus
+				span.howItWorks__conclus!=app.howItWorks.conclusion
+				.howItWorks__decore-wr.containner-pad
+					p.howItWorks__text!=app.howItWorks.text1
+			
+			.howItWorks__section.howItWorks__section-example.containner-pad
+				.example-invest
+					h4.example-invest__title!=app.howItWorks.exampleIinvest.example
+					p.example-invest__text!=app.howItWorks.exampleIinvest.text1
+					ul.example-invest__list
+						each item in exampleIinvestList
+							li.example-invest__list-item
+								span.example-invest__list-name #{item.name}
+								span.example-invest__list-value #{item.value}
+					p.example-invest__text.example-invest__text_them_blue!=app.howItWorks.exampleIinvest.text2
+			.howItWorks__system.containner-pad
+				.system
+					h4.system__title!=app.howItWorks.sestemAndSecurity.title
+					.system__inner
+						.system__left.system__col
+							.system__item
+								p.system__item-title!=app.howItWorks.sestemAndSecurity.item1.title
+								p.system__item-text!=app.howItWorks.sestemAndSecurity.item1.text
+							.system__item
+								p.system__item-title!=app.howItWorks.sestemAndSecurity.item2.title
+								p.system__item-text!=app.howItWorks.sestemAndSecurity.item2.text
+						.system__center.system__col
+							div.decore1
+							div.decore2
+							div.decore3
+							div.decore4
+							img(src="../static/img/decore/mbmLogoBig.svg", alt="").system__logo
+						.system__right.system__col
+							.system__item
+								p.system__item-title!=app.howItWorks.sestemAndSecurity.item3.title
+								p.system__item-text.system__item-text_base_right!=app.howItWorks.sestemAndSecurity.item3.text
+			include ../components/investRightNow

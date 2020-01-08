@@ -57,6 +57,8 @@ app.use(require('connect-history-api-fallback')({
     // { from: /\/whitepaper_language\/$/, to: '/whitepaper_language/index.html'},
     // { from: /\/business_overview_language\/$/, to: '/business_overview_language/index.html'},
     { from: /\/cof\/$/, to: '/cof/index.html'},
+    { from: /\/token\/$/, to: '/token/index.html'},
+    { from: /\/howItWorks\/$/, to: '/howItWorks/index.html'},
     { from: /\/chn\/token\//, to: '/chn/token/index.html'},
     { from: /\/chn\/$/, to: '/chn/index.html'},
   ]

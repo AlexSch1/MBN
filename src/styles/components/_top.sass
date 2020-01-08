@@ -3,9 +3,9 @@
   position: relative
   z-index: 9
   height: 100vh
-  @media(max-width: 1439px)
-    height: auto
-  @media(max-width: 1200px)
+  @media(min-width: 1920px)
+    max-height: 1005px
+  @media(max-width: 1600px)
     height: auto
 
   &__decore
@@ -138,13 +138,10 @@
     text-decoration: none
     font-weight: bold
     text-transform: uppercase
-
+    transition: all .3s ease
     &:hover
-      .top__btn_img
-        transform: translateX(-5px)
-
-      .top__btn_span
-        transform: translateX(5px)
+      box-shadow: 0px 12px 11px -11px #3ac997
+      background-color: #3ac997d4
     @media(max-width: 1690px)
       border-width: 15px
       top: -15px

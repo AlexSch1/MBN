@@ -1,5 +1,5 @@
 .investors-partners.containner-pad
-    h3.investors-partners__title.title Connected exchanges, investors and partners
+    h3.investors-partners__title.title!=app.investors_partners.title
     .investors-partners__row
         .investors-partners__item
             img(src="static/img/patterns/binance.svg", alt="" width="304").investors-partners__img
@@ -23,5 +23,5 @@
         .investors-partners__item
             img(src="static/img/patterns/toshi.png", alt="" width="230" height="90").investors-partners__img
     .investors-partners__bottom
-        p.investors-partners__text.title Invest Right Now
+        p.investors-partners__text.title!=app.invest_btn
         a(href="").investors-partners__btn.btn-base-shadow Let’s start

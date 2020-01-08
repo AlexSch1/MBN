@@ -1,19 +1,15 @@
 .platform-funds
     .platform-funds__inner.containner-pad
         .platform-funds__content
-            h3.platform-funds__title.title Platform for Funds
-            P.platform-funds__text An investor or trader is able to join in and be part of a fund or create it in just few steps:
+            h3.platform-funds__title.title!=app.platform_funds.title
+            P.platform-funds__text!=app.platform_funds.text
             .history-container.platform-funds__history
                 .history-container__item
-                    p.history-container__title 
-                        | Create your 
-                        b  own fund
+                    p.history-container__title!=app.platform_funds.li_1
                 .history-container__item
-                    p.history-container__title 
-                        | Raise investments
+                    p.history-container__title!=app.platform_funds.li_2
                 .history-container__item
-                    p.history-container__title 
-                        | Work with a ready base of traders
+                    p.history-container__title!=app.platform_funds.li_3
             .platform-funds__btn-wr
                 a(href="").platform-funds__btn.btn-bl-shadow  Send Request        
         .platform-funds__picture       

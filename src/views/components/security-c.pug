@@ -1,14 +1,12 @@
 .security-top
     .security-top__inner.containner-pad
-        h1.security-top__title.title Security 
+        h1.security-top__title.title!=app.security.title 
         .security-top__top
             .security-top__item.security-top__item-men
-                img(src="/static/img/icons/iconmen.svg", alt="").security-top__men
-                p.security-top__infestor.title.security-top__title-item Investor
+                img(src="/static/img/icons/iconmen.png", alt="").security-top__men
+                p.security-top__infestor.title.security-top__title-item!=app.security.investor
             .security-top__arr
-                p.security-top__text
-                    b API 
-                    | Keys
+                p.security-top__text!=app.security.api
                 img(src="/static/img/icons/arrlonggrad.svg", alt="").security-top__arr-img
             .security-top__mbn.mbn
                 //- img(src="/static/img/boxgrad.svg", alt="").mbn__box
@@ -20,19 +18,9 @@
                 img(src="/static/img/icons/arrlonggrad.svg", alt="").security-top__arr-img
             .security-top__item.security-top__item-girl
                 img(src="/static/img/icons/icongirl.svg", alt="").security-top__girl
-                p.security-top__trader.title.security-top__title-item Trader
+                p.security-top__trader.title.security-top__title-item!=app.security.trader
         ul.security-top__list 
-            li.security-top__li
-                | The trader doesn’t have 
-                b  direct access 
-                | to the investor's assets
-            li.security-top__li 
-                | Investors assets are always 
-                b in control 
-                | by the investor
-            li.security-top__li
-                b API Keys
-                |  are stored in a database secured with 
-                b ECDSA 
-                | algorithm
+            li.security-top__li!=app.security.li_1
+            li.security-top__li!=app.security.li_2
+            li.security-top__li!=app.security.li_3
             

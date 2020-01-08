@@ -1,0 +1,40 @@
+extends ../layouts/base
+
+block page_variables
+	- var page_class = 'mbntoken';
+	- var page_active = '/token/';
+	- var platformUtility = app.token.platformUtility.list;
+	- var userUtility = app.token.userUtility.list;
+
+block append head
+	block head_variables
+		- var title = app.head.token.title;
+		- var description = app.head.token.description;
+
+block content
+	.dot-pattern-wrapper
+		.mbn-token
+			.mbn-token__top.containner-pad
+				h1.mbn-token__title.title!=app.token.title
+			.mbn-token__inner.mbn-token__content.containner-pad
+				.mbn-token__col.mbn-token__left
+					.mbn-token__item.token-list
+						.token-list__head
+							p.token-list__title-main!=app.token.platformUtility.title
+						each item in platformUtility
+							.token-list__item
+								p.token-list__title #{item.title}
+								div.token-list__content!=item.value
+						
+						
+				.mbn-token__col.mbn-token__right
+					.mbn-token__item.token-list
+						.token-list__head
+							p.token-list__title-main!=app.token.userUtility.title
+						each item in userUtility
+							.token-list__item
+								p.token-list__title #{item.title}
+								div.token-list__content!=item.value
+			.mbn-token__section
+				include ../components/token
+			

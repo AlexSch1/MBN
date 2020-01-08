@@ -17,15 +17,15 @@
         color: #1e2124
         font-size: px-to-rem(18px)
         margin-bottom: 65px
-    &__items
-        display: flex
-        justify-content: center
-        margin-bottom: 79px
-        @media(max-width: 767px)
-            margin-bottom: 50px
-            flex-direction: column
-            justify-content: center
-            align-items: center
+    // &__items
+    //     display: flex
+    //     justify-content: center
+    //     margin-bottom: 79px
+    //     @media(max-width: 767px)
+    //         margin-bottom: 50px
+    //         flex-direction: column
+    //         justify-content: center
+    //         align-items: center
     &__btn
         border-radius: 50px
         background-color: #3ac997
@@ -39,6 +39,10 @@
         line-height: 60px
         cursor: pointer
         box-shadow: 0px 12px 20px -11px #3ac997
+        transition: all .3s ease
+        &:hover
+            box-shadow: 0px 12px 11px -11px #3ac997
+            opacity: 0.9
     &__decore
         position: absolute
         top: -60%

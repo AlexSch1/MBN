@@ -1,7 +1,7 @@
 .rating.containner-pad
-    p.rating__sub * profit calculated by trader’s history based on Membrana’s block
-    h3.rating__title.title Trader’s rating
-    p.rating__sub-title the best of all
+    p.rating__sub!=app.rating.sub
+    h3.rating__title.title!=app.rating.title
+    p.rating__sub-title!=app.rating.sub_title
     .rating__table.table-rating
         .table-rating__grid-scroll
             .table-rating__grid
@@ -15,61 +15,4 @@
                         .table-rating__th Average Monthly ROI
                         .table-rating__th Contract Settings
                         .table-rating__th
-                    //- .table-rating__tr(data-trader="@Johny").table-rating__row
-                        .table-rating__td.table-rating__name
-                            span.nicname @fat_boy_slim
-                        .table-rating__td.table-rating__pic 
-                            img(src="https://beta.membrana.io/api/static/fat_boy_slim_stat_usdt.png", alt="")
-                        .table-rating__td.table-rating__pic
-                            img(src="https://beta.membrana.io/api/static/fat_boy_slim_stat_btc.png", alt="")
-                        .table-rating__td.table-rating__balance-stat.balance-stat
-                            div
-                                | Current USDT: 
-                                span.usdt 0.00
-                            div
-                                | Change USDT (7d): 
-                                span.usdt 0.00
-                            br
-                            div
-                                | Change BTC: 
-                                span.btc 0.00
-                            div
-                                | Change BTC (7d): 
-                                span.btc 10%
-                            
-                        .table-rating__td.contract-stat
-                            div
-                                | Positive: 
-                                span 19
-                            div
-                                | Negative: 
-                                span 24
-                            br
-                            br
-                            br
-                        .table-rating__td.avg
-                            div
-                                | 11.41 %
-                        .table-rating__td.contract-settings
-                            div
-                                span Target: 
-                                span 20%
-                            div
-                                span Max loss: 
-                                span 5%
-                            div
-                                span Duration: 
-                                span 5 days
-                            div
-                                span Fee: 
-                                span 10%
-                            div
-                                span Currency: 
-                                span BTC
-                            div
-                                span Min amount: 
-                                span 0.1
-                        .table-rating__td.table-rating__btn-invest
-                            a(href="").table-rating__btn INVEST NOW
-        
     a(href="").rating__btn See All

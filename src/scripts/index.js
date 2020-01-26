@@ -1,5 +1,5 @@
 import $ from 'jquery'
-import 'custom-select/src/css/custom-select.css'
+// import 'custom-select/src/css/custom-select.css'
 // import customSelect from 'custom-select'
 import 'air-datepicker/dist/css/datepicker.css'
 import 'air-datepicker/dist/js/datepicker'
@@ -21,21 +21,25 @@ window.$ = $
       this.ratingTraders = null
       this.selectedTrader = null
 
-      $.get('https://beta.membrana.io/api/v2/challenge/result?round=0', (data) => {
+      $.get('https://beta.membrana.dev/api/v2/challenge/result?round=0', (data) => {
         this.traderJson = data.results
       })
 
-      $.get('https://beta.membrana.io/api/v2/rating', (data) => {
+      $.get('https://beta.membrana.dev/api/v2/rating', (data) => {
         this.ratingTraders = data.rating
         this.selectedTrader = data.rating[0]
-        this.createTable()
-        this.initSelect()
-        this.helper()
-        this.initCalculate()
+        // this.createTable()
+        // this.initSelect()
+        // this.helper()
+        this.init()
+        // this.initCalculate()
       })
     }
 
-    initCalculate = function () {
+    init = function () {
+      this.createTable()
+      this.initSelect()
+      this.helper()
       this.initDatapicer()
     }
 
@@ -106,7 +110,7 @@ window.$ = $
         this.selectedTrader = {
           name: selectNewTrader
         }
-        this.loaderCpen()
+        this.loaderOpen()
 
         document.querySelector('.trader-r__name').innerHTML = selectNewTrader
         $('.autocomplete .history-container__input').val(`@${selectNewTrader}`)
@@ -114,7 +118,7 @@ window.$ = $
       })
     }
 
-    loaderCpen = () => {
+    loaderOpen = () => {
       $('.profit__flex').addClass('blur')
       $('.profit__loader').addClass('profit__loader_active')
     }
@@ -146,7 +150,7 @@ window.$ = $
     }
 
     requestCalculate = (trader, date, investment) => {
-      $.get(`https://beta.membrana.io/api/v2/calculator?trader=${trader}&start=${date}&investment=${investment}`, (data) => {
+      $.get(`https://beta.membrana.dev/api/v2/calculator?trader=${trader}&start=${date}&investment=${investment}`, (data) => {
         this.results = data
         let result = data.result
         document.querySelector('.income__usd').innerHTML = (result * $('.history-container__usd').val()).toFixed(1)
@@ -163,13 +167,11 @@ window.$ = $
 
     tableRows = (len) => {
       let fragmentTable = document.createDocumentFragment()
-
       for (let i = this.tableView; i < this.ratingTraders.length; i++) {
         if (!this.ratingTraders[i].verified) {
           continue
         }
-
-        if (i >= len) {
+        if (this.tableView >= len) {
           break
         }
 
@@ -185,11 +187,11 @@ window.$ = $
 
         let tdimg1 = document.createElement('div')
         tdimg1.className = 'table-rating__td table-rating__pic table-rating__hide'
-        tdimg1.innerHTML = `<img src="https://beta.membrana.io/api/static/${item.name}_stat_usdt.png">`
+        tdimg1.innerHTML = `<img src="https://beta.membrana.dev/api/static/${item.name}_stat_usdt.png">`
 
         let tdimg2 = document.createElement('div')
         tdimg2.className = 'table-rating__td table-rating__pic table-rating__hide'
-        tdimg2.innerHTML = `<img src="https://beta.membrana.io/api/static/${item.name}_stat_btc.png">`
+        tdimg2.innerHTML = `<img src="https://beta.membrana.dev/api/static/${item.name}_stat_btc.png">`
 
         let tdBalanceStat = document.createElement('div')
         tdBalanceStat.className = 'table-rating__td balance-stat table-rating__balance-stat table-rating__hide-mobile-two'
@@ -267,14 +269,15 @@ window.$ = $
         let tdBtn = document.createElement('div')
         tdBtn.className = 'table-rating__td table-rating__btn-invest'
         tdBtn.innerHTML = `
-          <a class="table-rating__btn" href="https://beta.membrana.io/${item.name}" target="_blank">INVEST NOW</a>
+          <a class="table-rating__btn" href="https://beta.membrana.dev/${item.name}" target="_blank">INVEST NOW</a>
         `
 
         tableTr.append(tdName, tdimg1, tdimg2, tdBalanceStat, tdContractStat, tdAvg, tdContractSattings, tdBtn)
         fragmentTable.appendChild(tableTr)
+        this.tableView++
       }
 
-      document.querySelector('.table-rating__wrap').appendChild(fragmentTable)
+      document.querySelector('.table-rating__body').appendChild(fragmentTable)
       this.tableView += len
 
       document.querySelector('.rating__btn').addEventListener('click', (e) => {
@@ -285,23 +288,6 @@ window.$ = $
     }
 
     createTable = () => {
-      document.querySelector('.table-rating__wrap').innerHTML = ''
-
-      let headTable = document.createElement('div')
-      headTable.className = 'table-rating__head'
-      headTable.innerHTML = `
-          <div class="table-rating__th">Name</div>
-          <div class="table-rating__th table-rating__hide">Balance Chart 7d, USDT</div>
-          <div class="table-rating__th table-rating__hide">Balance Chart 7d, BTC</div>
-          <div class="table-rating__th table-rating__hide-mobile-two">Balance Under Management</div>
-          <div class="table-rating__th table-rating__hide-mobile">Contract Stats</div>
-          <div class="table-rating__th">Average Monthly ROI</div>
-          <div class="table-rating__th">Contract Settings</div>
-          <div class="table-rating__th"></div>
-        `
-
-      document.querySelector('.table-rating__wrap').appendChild(headTable)
-
       this.tableRows(10)
 
       $(document).on('click', '.table-rating__row', (e) => {
@@ -311,7 +297,7 @@ window.$ = $
         this.selectedTrader = {
           name: trader
         }
-        this.loaderCpen()
+        this.loaderOpen()
         this.calculate()
       })
     }
@@ -345,7 +331,7 @@ window.$ = $
         language: 'en',
         maxDate: new Date(),
         onSelect: (formattedDate, date, inst) => {
-          this.loaderCpen()
+          this.loaderOpen()
           this.calculate()
           myDatepicker.hide()
         }
@@ -376,7 +362,9 @@ window.$ = $
     }
     $('.level').addClass('level_disabled')
     $(this).toggleClass('level_disabled')
-    $('.tokenholders__medal-row').toggleClass('tokenholders__medal-row_visible')
+    $('.tokenholders__medal-row').removeClass('tokenholders__medal-row_visible')
+    let dataLavael = $(this).data('level')
+    $(`.tokenholders__medal-row-${dataLavael}`).toggleClass('tokenholders__medal-row_visible')
 
     let procent = $(this).data('value')
     let procentActive = $('.percent__value').html()
@@ -385,8 +373,11 @@ window.$ = $
 
     if (procentActive > procent) {
       duraction = -duraction
-    } else {
+    } else if (procentActive < procent) {
       duraction = +duraction
+    } else {
+      $('.percent__value').html(newProcent)
+      return
     }
 
     let timer = setInterval(() => {
@@ -404,6 +395,7 @@ window.$ = $
     $('.cart-token').removeClass('cart-token_active')
     $(e.currentTarget).addClass('cart-token_active')
     $('.token__btn').attr('href', e.currentTarget.dataset.link)
+    $('.token__btn-name').html(` @ ${e.currentTarget.dataset.name}`)
   })
   /**
    * scroll-btn
@@ -525,7 +517,7 @@ window.$ = $
     if (valueInput.length === 0) {
       return
     }
-    $.get(`https://beta.membrana.io/api/v2/profile/${valueInput}`, (data) => {
+    $.get(`https://beta.membrana.dev/api/v2/profile/${valueInput}`, (data) => {
       if (data.error) {
         $('.opportunities__input-tooltip').addClass('opportunities__input-tooltip_is-active')
         $('.opportunities__input').addClass('input input_danger')
@@ -550,8 +542,7 @@ window.$ = $
   function checkSign () {
     let nameTrader = sessionStorage.getItem('contact_with')
     if (nameTrader) {
-      $.get(`https://beta.membrana.io/api/v2/profile/${nameTrader}`, (data) => {
-        console.log(data)
+      $.get(`https://beta.membrana.dev/api/v2/profile/${nameTrader}`, (data) => {
         $('.sign-in__user-login').html(data.profile.name)
         $('.sign-in__money').html(data.profile.totalInUSDT)
 
@@ -748,21 +739,12 @@ $(window).on('imagesReady', () => {
   // topImage.onload = hidePreloader
   // topImage.onerror = hidePreloader
 })
-// mbn token
-function getMbnTokenPprice () {
-  $.ajax({
-    // url: 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest',
-    url: 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit=6&start=1202',
-    data: {
-      'X-CMC_PRO_API_KEY': 'ec94f38e-dfe9-41de-88d1-6d5009ed3d95'
-    },
-    type: 'GET',
-    beforeSend: function (xhr) {
-      xhr.setRequestHeader('X-Test-Header', 'test-value')
-    },
-    success: function () {
-      alert('Success!')
-    }
-  })
-}
-getMbnTokenPprice()
+/**
+ * FAQ page animation
+ */
+$('.faq-item').on('click', function () {
+  const $item = $(this)
+  $item.toggleClass('active')
+  $item.find('.faq-item__answer').slideToggle()
+})
+$('.faq-item__answer').on('click', (e) => e.stopPropagation())

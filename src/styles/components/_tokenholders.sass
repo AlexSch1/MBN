@@ -25,10 +25,10 @@
         left: 7%
         z-index: 0
         circle
-            transform-origin: center
-            animation: topDecore2 55s linear infinite
-            &:nth-child(1)
-                animation-duration: 75s
+        transform-origin: center
+        animation: topDecore2 55s linear infinite
+        &:nth-child(1)
+            animation-duration: 75s
             &:nth-child(2)
                 animation-duration: 90s
             &:nth-child(3)
@@ -60,11 +60,13 @@
             padding-right: 73px
         @media (max-width: 1279px)
             padding-right: 63px
+            margin-top: 6px
         @media(max-width: 767px)
             padding: 0
             display: flex
             justify-content: center
             padding-bottom: 40px
+            margin-top: 0
     &__right
         display: flex
         flex-direction: column
@@ -90,7 +92,6 @@
             top: 54%
             transform: translateY(-50%)
             right: -106px
-            transition: opacity 0.5s ease
             opacity: 0
             @media(max-width: 1439px)
                 right: -85px
@@ -102,12 +103,32 @@
             &_visible
                 opacity: 1
             &-2
-                top: 41%
+                top: 48%
+                right: -106px
+                @media (max-width: 1279px)
+                    right: -85px
+                
+            &-1
+                top: 39%
                 right: -105px
                 @media(max-width: 1439px)
                     right: -103px
                 @media (max-width: 1279px)
-                    right: -84px
+                    right: -85px
+            &-3
+                top: 58%
+                right: -88px
+                @media(max-width: 1439px)
+                    right: -85px
+                @media (max-width: 1279px)
+                    right: -70px
+            &-4
+                top: 67%
+                right: -88px
+                @media(max-width: 1439px)
+                    right: -85px
+                @media (max-width: 1279px)
+                    right: -70px
     &__percent
         position: absolute
         top: 24%
@@ -121,10 +142,13 @@
     padding: 18px 57px 16px 61px
     display: inline-block
     max-width: 241px
-    font-size: px-to-rem(36px)
+    font-size: px-to-rem(20px)
     background-image: linear-gradient(to right, #f0975c, #d85590)
     border-radius: 10px
     font-weight: bold
     cursor: pointer
+    @media (max-width: 1279px)
+        padding: 13px 50px 14px 50px
     &_disabled
         opacity: 0.2
+    

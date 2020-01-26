@@ -1,0 +1,200 @@
+.vision-wrapper
+  padding: 0
+
+
+.vision
+  margin: 0 auto
+  max-width: px-to-rem(1370px)
+
+  &__title
+    margin: 0 auto
+    max-width: px-to-rem(600px)
+
+  &__items
+    display: flex
+    flex-wrap: wrap
+    margin: px-to-rem(20px) px-to-rem(-50px) px-to-rem(-40px)
+    @media(max-width: 1023px)
+      margin: px-to-rem(20px) px-to-rem(-20px) px-to-rem(-20px)
+    @media(max-width: 767px)
+      flex-direction: column
+
+.faq-item__answer.vision
+  margin-left: -10rem
+  @media(max-width: 1023px)
+    margin-left: -13rem
+  @media(max-width: 767px)
+    margin-left: -10rem
+
+  .vision-item__title
+    color: #1e2124
+    font-size: px-to-rem(23px)
+    font-weight: 500
+    text-transform: none
+
+  .vision-item__description
+    font-weight: 300
+    padding-right: 20px
+    color: #1e2124
+    font-size: px-to-rem(18px)
+    @media(max-width: 1023px)
+      padding-right: 0
+
+.vision-item
+  align-items: flex-start
+  display: flex
+  padding: px-to-rem(27px) px-to-rem(50px) px-to-rem(17px)
+  width: 100%
+  position: relative
+
+  &:after
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 150px
+    width: 105px
+    height: 1px
+    background-color: rgba(112, 112, 112, .2)
+    @media(max-width: 1023px)
+      display: none
+
+
+  &__icon
+    align-items: center
+    display: flex
+    flex-shrink: 0
+    height: px-to-rem(73px)
+    justify-content: center
+    margin-right: px-to-rem(30px)
+    width: px-to-rem(71px)
+    @media(max-width: 767px)
+      margin: 0
+
+    svg
+      width: 4rem !important
+
+
+  &__title
+    color: #b1b5e5
+    // font-size: 23px
+    // line-height: 27px
+    font-weight: normal
+    // letter-spacing: px-to-rem(3px)
+    margin: 0 0 px-to-rem(8px)
+    text-transform: uppercase
+
+  &__description
+    color: #b1b5e5
+    // font-size: 18px
+    font-weight: normal
+    letter-spacing: px-to-rem(.5px)
+    // line-height: 21px
+
+.vision-item:last-child:after
+  display: none
+
+.vision-item:last-child
+  padding-bottom: 50px
+
+.backed__wr>*
+  float: left
+
+.backed__wr
+  overflow: hidden
+  max-width: 850px
+  margin: 0 auto
+  text-align: center
+
+  .backed__coin,
+    width: 100%
+    padding: 18px 20%
+    @media(max-width: 900px)
+      width: 100%
+      padding: 20px 20%
+
+  .line
+    width: 1px
+    height: 140px
+    background-color: rgba(112, 112, 112, .2)
+    @media(max-width: 900px)
+      display: none
+
+  .logo
+    width: 266px
+    @media(max-width: 440px)
+      width: 200px
+
+    .cls-2
+      clip-path: none
+
+  // .backed__FBC
+  //   padding-left: 54px
+  //   padding-top: 40px
+  //   @media(max-width: 900px)
+  //     max-width: 366px
+  //     padding: 40px 0 0
+  //     float: none
+  //     margin: 0 auto
+  //     @media(max-width: 440px)
+  //       padding: 30px 5% 0
+
+  //   a
+  //     width: 350px
+
+
+  .backed__coin>*,
+  .backed__FBC>*
+    float: right
+
+  .backed__coin,
+  .backed__FBC
+    @media(max-width: 750px)
+      float: none
+      margin: 0 auto
+      overflow: hidden
+      width: auto
+      padding: 0
+      display: inline-block
+
+    .link
+      width: 28px
+      margin-left: 48px
+      margin-right: 40px
+      margin-top: 38px
+      @media(max-width: 440px)
+        margin-top: 24px
+        margin-left: 20px
+        margin-right: 20px
+
+  .backed__FBC
+    @media(max-width: 440px)
+      padding-top: 22px
+
+.backed__tittle
+  margin-bottom: 100px
+  @media(max-width: 900px)
+    margin-bottom: 6rem
+
+.backed-wrapper
+  .patterns
+    position: relative
+    @media(max-width: 900px)
+      display: none
+  
+    .net
+      right: -30%
+      top: -100px
+      @media(max-width: 1440px)
+        right: -50%
+
+    .triangle1
+      left: 10%
+      top: 100px
+
+.backed
+  @media(max-width: 900px)
+    margin-top: 7rem
+
+.components-wrapper
+  .net
+    z-index: -1

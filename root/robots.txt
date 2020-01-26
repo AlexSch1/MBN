@@ -3,6 +3,3 @@ Disallow: /img/
 Disallow: /css/
 Disallow: /js/
 
-Host: https://membrana.io
-
-Sitemap: https://membrana.io/sitemap.xml

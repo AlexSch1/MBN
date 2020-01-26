@@ -1,0 +1,30 @@
+extends ../layouts/base
+
+block page_variables
+  - var page_class = 'faq';
+  - var page_active = '/faq/';
+
+block append head
+  block head_variables
+    - var title = app.head.faq.title;
+    - var description = app.head.faq.description;
+
+block content
+  .page-content-pattern
+    .faq
+        .faq__head
+            .containner-pad
+                h1.faq__title!=app.faq_page.title
+    .containner-pad
+        .faq-block
+            .faq-block__list
+                .faq-item
+                    .faq-item__question Presenting The Vision of Membrana Project Components
+                    .faq-item__answer.vision
+                        include ../components/vision
+                for item in app.faq_page.items
+                    .faq-item
+                        .faq-item__question!=item.question
+                        .faq-item__answer!=item.answer
+    .faq__footer
+        include ../components/need-help

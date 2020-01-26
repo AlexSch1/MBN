@@ -13,6 +13,7 @@
         padding-top: 49px   
         z-index: 0
         overflow: hidden
+        
         &::before
             content: ""
             position: absolute
@@ -27,13 +28,13 @@
                 width: 100%
                 bottom: 0
                 top: auto
+        @media(max-width: 1690px)
+            background-position-x: 0
         @media(max-width: 1439px)
-            background: #101012 url(/static/img/icons/People2.svg) -13.6% 42px no-repeat
-            background-size: auto
-        @media(max-width: 1280px)
-            background: #101012 url(/static/img/icons/People2.svg) -10.6% 42px no-repeat
-            background-size: auto
-        @media(max-width: 767px)
+            background-position-x: -5%
+            background-position-y: center
+            background-size: auto 70%
+        @media(max-width: 1023px)
             background: #101012
     &__logo
         position: absolute

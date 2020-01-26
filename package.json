@@ -61,7 +61,6 @@
   },
   "dependencies": {
     "air-datepicker": "^2.2.3",
-    "custom-select": "^1.1.15",
     "jquery": "^3.3.1"
   },
   "engines": {

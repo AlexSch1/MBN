@@ -264,3 +264,89 @@ a
         left: 50%
         margin-left: -12px
         position: absolute
+
+.faq
+  &__head
+    background-color: #f5f9fa
+    padding-top: px-to-rem(190px)
+    padding-bottom: px-to-rem(67px)
+
+  &__title
+    text-align: center
+    margin: 0
+    color: #000000
+    font-family: "Maven Pro", sans-serif
+    font-weight: bold
+
+  &__footer
+    border-top: 1px solid #edefef
+
+
+  
+.faq-block
+  margin: px-to-rem(100px) auto px-to-rem(160px)
+  max-width: px-to-rem(850px)
+  @media(max-width: 767px)
+    margin: px-to-rem(70px) 0 0
+
+
+.faq-item
+  border-bottom: solid 1px #dbdfdf
+  display: flex
+  cursor: pointer
+  flex-direction: column
+  font-size: px-to-rem(18px)
+  justify-content: center
+  line-height: 1.17
+  padding: px-to-rem(20px) 0 px-to-rem(20px) px-to-rem(54px)
+  @media(max-width: 767px)
+    padding: 5px 0 5px 35px
+
+
+  &.active
+    .faq-item__question::after
+      transform: rotate(90deg) scale(0, 1)
+
+  &__question
+    color: #2c19a7
+    display: flex
+    font-weight: 500
+    opacity: 0.8
+    flex-direction: column
+    justify-content: center
+    padding: px-to-rem(16px) 0
+    height: px-to-rem(54px)
+    position: relative
+    width: 100%
+    @media(max-width: 767px)
+      height: auto
+
+
+    &::before,
+    &::after
+      background-color: #2c19a7
+      content: ''
+      height: px-to-rem(3px)
+      left: px-to-rem(-50px)
+      margin-top: px-to-rem(-2px)
+      position: absolute
+      top: 50%
+      width: px-to-rem(21px)
+      @media(max-width: 767px)
+        left: -35px
+
+
+    &::after
+      transform: rotate(90deg) scale(1, 1)
+      transition: .2s ease
+
+  &__answer
+    display: none
+    padding-bottom: px-to-rem(16px)
+    color: #1e2124
+    font-size: px-to-rem(18px)
+
+    a
+      &:hover
+        color: #B1B5E5
+        transition: .3s ease

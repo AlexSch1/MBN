@@ -10,11 +10,13 @@
                         span.percent__value 10
                         span %
                     img(src="/static/img/icons/medal.svg", alt="").tokenholders__img.tokenholders__medal-img
-                    img(src="/static/img/icons/medalRow.svg", alt="").tokenholders__img.tokenholders__medal-row.tokenholders__medal-row_visible(data-level="1")
-                    img(src="/static/img/icons/medalRow2.svg", alt="").tokenholders__img.tokenholders__medal-row.tokenholders__medal-row-2(data-level="2")
+                    img(src="/static/img/icons/medalRow.svg", alt="").tokenholders__img.tokenholders__medal-row.tokenholders__medal-row-2.tokenholders__medal-row_visible(data-level="1")
+                    img(src="/static/img/icons/medalRow2.svg", alt="").tokenholders__img.tokenholders__medal-row.tokenholders__medal-row-1(data-level="2")
+                    img(src="/static/img/icons/medalRow3.svg", alt="").tokenholders__img.tokenholders__medal-row.tokenholders__medal-row-4(data-level="4")
+                    img(src="/static/img/icons/medalRow4.svg", alt="").tokenholders__img.tokenholders__medal-row.tokenholders__medal-row-3(data-level="3")
             .tokenholders__right.tokenholders__col
                 p.tokenholders__text 
-                    b.text-grad 10% 
+                    b.text-grad 10-15% 
                     | from 
                     b COF profit
                     | every month shares through all 
@@ -25,6 +27,10 @@
                         span.level__text Level 1
                     .tokenholders__item-level.level(data-level="2" data-value="10")
                         span.level__text Level 2
+                    .tokenholders__item-level.level.level_disabled(data-level="3" data-value="10")
+                        span.level__text Level 3
+                    .tokenholders__item-level.level.level_disabled(data-level="4" data-value="15")
+                        span.level__text Level 4
                 p.tokenholders__note.tokenholders__text-base 
                     | *You must hold at least 
                     b $6000 

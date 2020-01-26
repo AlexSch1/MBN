@@ -1,0 +1,20 @@
+<svg width="99" height="160" version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 99.8 160.5" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#EC8E62;stroke-width:3;stroke-dasharray:5,5;}
+	.st1{fill:#1E2124;}
+	.st2{fill:none;stroke:#E48860;stroke-width:3;}
+	.st3{fill:none;stroke:#DA5C8A;stroke-width:3;}
+</style>
+<path class="st0" d="M94.9,152c-15.6-4.6-27.1-16.8-38.1-28.1"/>
+<g>
+	<circle class="st1" cx="8.5" cy="8.5" r="8.5"/>
+	<circle class="st2" cx="8.5" cy="8.5" r="7"/>
+</g>
+<g>
+	<circle class="st1" cx="91.1" cy="152" r="8.5"/>
+	<circle class="st3" cx="91.1" cy="152" r="7"/>
+</g>
+<path class="st0" d="M12.9,17c13.5,21.7,14.2,48.3,23.9,71.5"/>
+<path class="st0" d="M55.5,122.1c-7.9-9.6-12.9-21.2-18.1-32.3"/>
+</svg>

@@ -1,26 +1,27 @@
 .token-radio
     .token-radio__items
-        span(data-link="https://idex.market/eth/idex").token-radio.cart-token.shadow-item.cart-token_active
+        span(data-link="https://idex.market/eth/idex" data-name="IDEX").token-radio.cart-token.shadow-item.cart-token_active
             span.cart-token__title IDEX
             //- span.cart-token__text MBN/USD 1.6084
             .cart-token__links
-                a(href="https://idex.market/eth/mbn" target="_blank").cart-token__link MBN/ETH 0.0000268
-        span(data-link="https://www.probit.com/app/exchange/MBN-BTC").token-radio.cart-token.shadow-item
+                a(href="https://idex.market/eth/mbn" target="_blank").cart-token__link MBN/ETH
+        span(data-link="https://www.probit.com/app/exchange/MBN-BTC" data-name="ProBIT").token-radio.cart-token.shadow-item
             span.cart-token__title ProBIT
             //- span.cart-token__text MBN/USD 1.6084
             .cart-token__links
-                a(href="https://www.probit.com/app/exchange/MBN-BTC" target="_blank").cart-token__link MBN/BTC 0.000000428
-                a(href="https://www.probit.com/app/exchange/MBN-USDT" target="_blank").cart-token__link MBN/USDT 0.0033
-                a(href="https://www.probit.kr/app/exchange/MBN-KRW" target="_blank").cart-token__link MBN/KRW 3.9
-        span(data-link="https://eterbase.exchange/markets").token-radio.cart-token.shadow-item
+                a(href="https://www.probit.com/app/exchange/MBN-BTC" target="_blank").cart-token__link MBN/BTC
+                a(href="https://www.probit.com/app/exchange/MBN-USDT" target="_blank").cart-token__link MBN/USDT
+                a(href="https://www.probit.kr/app/exchange/MBN-KRW" target="_blank").cart-token__link MBN/KRW
+        span(data-link="https://eterbase.exchange/markets" data-name="Eterbase").token-radio.cart-token.shadow-item
             span.cart-token__title Eterbase
             .cart-token__links
-                a(href="https://eterbase.exchange/markets/MBNETH" target="_blank").cart-token__link MBN/ETH 0.000023
-                a(href="https://eterbase.exchange/account/92d994d3-b056-4ed7-98b6-8151d14f0ba7/markets/MBNUSDT" target="_blank").cart-token__link MBN/USDT 0.00321
-        span(data-link="https://abcc.com/en/pro/markets/mbnbtc").token-radio.cart-token.shadow-item
+                a(href="https://eterbase.exchange/markets/MBNETH" target="_blank").cart-token__link MBN/ETH
+                a(href="https://eterbase.exchange/account/92d994d3-b056-4ed7-98b6-8151d14f0ba7/markets/MBNUSDT" target="_blank").cart-token__link MBN/USDT
+        span(data-link="https://abcc.com/en/pro/markets/mbnbtc" data-name="ABCC").token-radio.cart-token.shadow-item
             span.cart-token__title ABCC
             .cart-token__links
-                a(href="https://abcc.com/en/pro/markets/mbnusdt" target="_blank").cart-token__link MBN/USDT 0.0033 
-                a(href="https://abcc.com/en/pro/markets/mbnbtc" target="_blank").cart-token__link MBN/BTC 0.00000043    
+                a(href="https://abcc.com/en/pro/markets/mbnusdt" target="_blank").cart-token__link MBN/USDT
+                a(href="https://abcc.com/en/pro/markets/mbnbtc" target="_blank").cart-token__link MBN/BTC   
     a(href="https://idex.market/eth/idex" target="_blank").token__btn.btn-base-shadow BUY MBN
+        span.token__btn-name  @ IDEX
     

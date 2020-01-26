@@ -1,0 +1,12 @@
+.vision-wrapper.js-section
+
+
+  .vision
+    .vision__items
+      each item in app.vision.items
+        .vision-item
+          .vision-item__icon
+            //- img(src=item.icon alt="")
+          .vision-item__content
+            h4.vision-item__title!=item.title
+            .vision-item__description!=item.description

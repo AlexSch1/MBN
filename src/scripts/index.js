@@ -1,6 +1,4 @@
 import $ from 'jquery'
-// import 'custom-select/src/css/custom-select.css'
-// import customSelect from 'custom-select'
 import 'air-datepicker/dist/css/datepicker.css'
 import 'air-datepicker/dist/js/datepicker'
 

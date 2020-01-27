@@ -164,11 +164,11 @@ window.$ = $
     }
 
     tableRows = (len) => {
+      this.ratingTraders.sort((a, b) => {
+        return b.contractSettings.roi - a.contractSettings.roi
+      })
       let fragmentTable = document.createDocumentFragment()
       for (let i = this.tableView; i < this.ratingTraders.length; i++) {
-        if (!this.ratingTraders[i].verified) {
-          continue
-        }
         if (this.tableView >= len) {
           break
         }
@@ -277,12 +277,6 @@ window.$ = $
 
       document.querySelector('.table-rating__body').appendChild(fragmentTable)
       this.tableView += len
-
-      document.querySelector('.rating__btn').addEventListener('click', (e) => {
-        e.preventDefault()
-        e.target.classList.add('rating__btn_show')
-        this.tableRows(this.ratingTraders.length)
-      })
     }
 
     createTable = () => {
